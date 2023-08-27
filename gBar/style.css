@@ -9,7 +9,7 @@
 
 .bar, tooltip {
   background-color: #1e1e2e;
-  opacity: 0.8;
+    opacity: 0.8;
   border-radius: 0px;
 }
 
@@ -22,22 +22,22 @@
 }
 
 .reboot-button {
-  font-size: 24px;
+  font-size: 28px;
   color: #6272a4;
 }
 
 .sleep-button {
-  font-size: 24px;
+  font-size: 28px;
   color: #6272a4;
 }
 
 .exit-button {
-  font-size: 24px;
+  font-size: 28px;
   color: #6272a4;
 }
 
 .power-button {
-  font-size: 24px;
+  font-size: 28px;
   color: #ff5555;
 }
 
@@ -127,7 +127,7 @@ highlight {
 }
 
 .bt-label-off {
-  font-size: 24px;
+  font-size: 22px;
   color: #1793D1;
 }
 
@@ -268,7 +268,7 @@ highlight {
 }
 
 .ws-current {
-  color: #ff0000;
+  color: #f1fa8c;
   font-size: 16px;
 }
 
@@ -310,7 +310,7 @@ highlight {
   }
 }
 .bt-bg {
-  background-color: #242a36;
+  background-color: #282a36;
   border-radius: 16px;
 }
 

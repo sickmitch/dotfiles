@@ -32,7 +32,7 @@
     #geometry = "350x5--10+30"
     width = (100,350)
     origin = top-right
-    offset = 10x0
+    offset = 10x10
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes

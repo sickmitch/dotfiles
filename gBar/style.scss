@@ -19,7 +19,7 @@ $textsize: 16px;
 
 *{
     all: unset;
-    font-family: "CaskaydiaCove Nerd Font";
+    font-family: "JetBrainsMono Nerd Font";
 }
 
 // debug
@@ -46,23 +46,23 @@ $textsize: 16px;
 }
 
 .reboot-button {
-    font-size: 28px;
+    font-size: 20px;
     
     color: $darkblue;
 }
 .sleep-button {
-    font-size: 28px;
+    font-size: 20px;
 
     color: $darkblue;
 }
 .exit-button {
-    font-size: 28px;
+    font-size: 20px;
 
     color: $darkblue;
 }
 
 .power-button {
-    font-size: 28px;
+    font-size: 20px;
 
     color: $red;
 }
@@ -110,7 +110,7 @@ highlight {
 }
 
 .audio-icon {
-    font-size: 24px;
+    font-size: 20px;
     color: $orange;
 }
 

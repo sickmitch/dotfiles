@@ -11,10 +11,10 @@
 CPUThermalZone: /sys/bus/platform/devices/coretemp.0/hwmon/hwmon5/temp2_input
 
 # The command to execute on suspend
-SuspendCommand: ~/.config/scripts/sys.sh suspend
+SuspendCommand: systemctl suspend
 
 # The command to execute on lock
-LockCommand: ~/.config/scripts/sys.sh lock
+LockCommand: swaylock
 
 # The command to execute on exit
 ExitCommand: killall Hyprland
@@ -23,7 +23,8 @@ ExitCommand: killall Hyprland
 BatteryFolder: /sys/class/power_supply/BAT0/
 
 # Overrides the icon of the nth (in this case the first) workspace
-# WorkspaceSymbol-1: 
+WorkspaceSymbol-1: 
+# WorkspaceSymbol-2: 󱎂
 
 # The default symbol for the workspaces
 DefaultWorkspaceSymbol: 
@@ -48,7 +49,7 @@ Location: T
 # This can cause the right widget to clip outside, if there is not enough space on screen (e.g. when opening the text)
 # Setting this to false will definitely fix this issue, but it won't look very good, since it will be off-center.
 # So try to decrease "TimeSpace" first, before setting this configuration to false.
-CenterTime: true
+CenterTime: false
 
 # How much space should be reserved for the time widget. Setting this too high can cause the right widget to clip outside.
 # Therefore try to set it as low as possible if you experience clipping.
@@ -58,19 +59,19 @@ CenterTime: true
 TimeSpace: 300
 
 # Set datetime style
-# DateTimeStyle: %a %D - %H:%M:%S %Z
+DateTimeStyle: %a %d/%m - %H:%M
 
 # Adds a audio input(aka. microphone) widget
 AudioInput: false
 
 # Sets the audio slider to be on reveal (Just like the sensors) when true. Only affects the bar.
-AudioRevealer: false
+AudioRevealer: true
 
 # Sets the rate of change of the slider on each scroll. In Percent
 AudioScrollSpeed: 5
 
 # Display numbers instead of a slider for the two audio widgets. Doesn't affect the audio flyin
-AudioNumbers: false
+AudioNumbers: true
 
 # Command that is run to check if there are out-of-date packages.
 # The script should return *ONLY* a number. If it doesn't output a number, updates are no longer checked.
@@ -79,7 +80,7 @@ CheckPackagesCommand: p="$(checkupdates)"; e=$?; if [ $e -eq 127 ] ; then exit 1
 
 
 # How often to check for updates. In seconds
-CheckUpdateInterval: 300
+CheckUpdateInterval: 600
 
 # Limits the range of the audio slider. Only works for audio output.
 # Slider "empty" is AudioMinVolume, Slider "full" is AudioMaxVolume
@@ -93,7 +94,7 @@ NetworkAdapter: wlp4s0
 NetworkWidget: true
 
 # Enables tray icons
-EnableSNI: true
+EnableSNI: false
 
 # SNIIconSize sets the icon size for a SNI icon.
 # SNIPaddingTop Can be used to push the Icon down. Negative values are allowed
@@ -102,7 +103,7 @@ EnableSNI: true
 # Scale everything down to 25 pixels ('*' as filter means everything)
 SNIIconSize: *, 25
 # Explicitly make OBS a bit smaller than default
-SNIIconSize: OBS, 23
+# SNIIconSize: OBS, 23
 # Nudges the Discord icon a bit down
 # SNIPaddingTop: Discord, 5
 
