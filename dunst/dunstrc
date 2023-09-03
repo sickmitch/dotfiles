@@ -382,8 +382,9 @@
 
 #[ignore]
 #    # This notification will not be displayed
-#    summary = "foobar"
-#    format = ""
+[Nicotine]
+   appname = "Nicotine+"
+   format = ""
 
 #[history-ignore]
 #    # This notification will not be saved in history
