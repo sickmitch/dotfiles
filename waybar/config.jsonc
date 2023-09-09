@@ -3,11 +3,14 @@
   "position": "top",
   "mod": "dock",
   "exclusive": true,
-  "height": 0,
-  "margin": "10",
+  "height": 31,
+  "margin-top": 5,
+  "margin-left": 10,
+  "margin-right": 10,
+  "margin-bot": 5,
   "modules-left": [
     "custom/launch_fuzzel",
-    "wlr/workspaces",
+    "hyprland/workspaces",
     "cpu",
     "memory",
     "disk",
@@ -101,7 +104,7 @@
     "interval": 300,
     "tooltip": true
   },
-  "wlr/workspaces": {
+  "hyprland/workspaces": {
     "format": "{icon}",
     "all-outputs": false,
     "on-click": "activate",
@@ -115,7 +118,8 @@
     },
     "format-icons": {
       "1": "",
-      "2": ""
+      "2": "",
+      "3": ""
     },
     "sort-by-number": true
   },
@@ -197,6 +201,7 @@
     "format": " {temperatureC}°C",
     "critical-threshold": 70,
     "format-critical": " {temperatureC}°C",
-    "tooltip": true
+    "tooltip": true,
+    "interval":1
   }
 }
