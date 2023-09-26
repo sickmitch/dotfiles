@@ -1,11 +1,11 @@
 #!/bin/bash
 ### set here you're stuff ###
-PATHWP=~/.config/hypr/wallpapers/ #cartella in cui cercare i wallpaper
+PATHWP=~/Immagini/WP/ #cartella in cui cercare i wallpaper
 MONITOR=eDP-1                     #nome del monitor da gestire
 ###
 NUM=/tmp/hypr/wallpaperNUM #percorsi per i file temp
 NOME=/tmp/hypr/wallpaperNOME
-D=$(cat ~/.config/hypr/scripts/defaultwp) #default da impostare all'avvio della sessione
+D=$(cat ~/.config/hypr/scripts/defaultwp.sh) #default da impostare all'avvio della sessione
 F=$(($(ls $PATHWP | wc -l) - 1))          #acquisisco il numero di wallpapers
 N=$(cat $NUM)                             #leggo il wallpaper attualmente impostato
 
