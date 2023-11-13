@@ -8,6 +8,7 @@
 	"scratchpads": {
 		"term": {
 			"command": "kitty --class kitty-dropterm",
+      "position": "0% 50%",
 			"unfocus": "hide",
 			"animation": "fromTop"
 		},

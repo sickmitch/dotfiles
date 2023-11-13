@@ -79,7 +79,7 @@ tooltip label{
 }
 #battery {
     border-radius: 0px 5px 5px 0px;
-    margin-right: 10px;
+    margin-right: 0px;
     color: #02C39A;
 }
 #cpu,#window {

@@ -17,20 +17,20 @@
     "disk#2",
     "hyprland/window"
   ],
-  "modules-center": [
-    "custom/updates",
-    "clock",
-    "tray"
-  ],
+  // "modules-center": [
+  // ],
   "modules-right": [
     "custom/media",
+    "custom/updates",
+    "tray",
+    "bluetooth",
     "temperature",
     "backlight",
     "pulseaudio",
-    "pulseaudio#microphone",
-    "network",
-    "bluetooth",
-    "battery"
+    // "pulseaudio#microphone",
+    // "network",
+    "battery",
+    "clock"
   ],
   "tray": {
     "icon-size": 15,
@@ -108,7 +108,7 @@
     "format": "{icon}",
     "all-outputs": false,
     "on-click": "activate",
-    "persistent_workspaces": {
+    "persistent-workspaces": {
       "1": [
         "eDP-1"
       ],
@@ -118,8 +118,7 @@
     },
     "format-icons": {
       "1": "",
-      "2": "",
-      "3": ""
+      "2": ""
     },
     "sort-by-number": true
   },
@@ -186,16 +185,16 @@
       ]
     }
   },
-  "pulseaudio#microphone": {
-    "format": "{format_source}",
-    "format-source": " {volume}%",
-    "format-source-muted": "",
-    "on-click": "pamixer --default-source -t",
-    "on-click-right": "pavucontrol",
-    "on-scroll-up": "pamixer --default-source -i 5",
-    "on-scroll-down": "pamixer --default-source -d 5",
-    "scroll-step": 5
-  },
+  // "pulseaudio#microphone": {
+  //   "format": "{format_source}",
+  //   "format-source": " {volume}%",
+  //   "format-source-muted": "",
+  //   "on-click": "pamixer --default-source -t",
+  //   "on-click-right": "pavucontrol",
+  //   "on-scroll-up": "pamixer --default-source -i 5",
+  //   "on-scroll-down": "pamixer --default-source -d 5",
+  //   "scroll-step": 5
+  // },
   "temperature": {
     "thermal-zone": 6,
     "format": " {temperatureC}°C",
