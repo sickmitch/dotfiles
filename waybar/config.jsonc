@@ -21,14 +21,15 @@
   // ],
   "modules-right": [
     "custom/media",
+    "custom/sonixd",
     "custom/updates",
     "tray",
     "bluetooth",
-    "temperature",
     "backlight",
     "pulseaudio",
     // "pulseaudio#microphone",
     // "network",
+    "temperature",
     "battery",
     "clock"
   ],
@@ -36,9 +37,15 @@
     "icon-size": 15,
     "spacing": 20
   },
+  "custom/sonixd": {
+    "exec": "/usr/bin/bash /home/mike/.config/waybar/scripts/sonixd.sh",
+    "format": "{} 󰎌",
+    "on-click": "playerctl play-pause",
+    "escape": true
+  },
   "custom/media": {
     "exec": "/usr/bin/python3 /home/mike/.config/waybar/scripts/mediaplayer.py --player spotify",
-    "format": "{}  ",
+    "format": "{} ",
     "return-type": "json",
     "on-click": "playerctl play-pause",
     "escape": true
