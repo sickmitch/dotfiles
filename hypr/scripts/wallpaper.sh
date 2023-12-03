@@ -1,6 +1,6 @@
 #!/bin/bash
 ### set here you're stuff ###
-PATHWP=~/Immagini/WP/ #cartella in cui cercare i wallpaper
+PATHWP=~/Immagini/WP/wallpapers/ #cartella in cui cercare i wallpaper
 MONITOR=eDP-1                     #nome del monitor da gestire
 ###
 NUM=/tmp/hypr/wallpaperNUM #percorsi per i file temp
@@ -40,11 +40,22 @@ prev_wp() { #wallpaper precedente
 	echo $N >$NUM #scrivo il wallpaper attuale in tmp
 }
 
-if [[ "$1" == "--start" ]]; then #selettore di funzione
+random_wp(){
+	N=$(echo $((0 + $RANDOM % $F)))
+	mapfile -t array <$NOME #inserisco i nomi in un array
+	I=$(echo ${array[$N]})  #assegno il nome necessario all'indice
+	set_wall
+	echo $N >$NUM #scrivo il wallpaper attuale in tmp
+}
+
+#selettore di funzione
+if [[ "$1" == "--start" ]]; then 
 	def_wp
 elif [[ "$1" == "--def" ]]; then
 	echo $N >~/.config/hypr/scripts/defaultwp
 	notify-send -u normal "New Default Wallpaper"
+elif [[ "$1" == "--ran" ]]; then
+  random_wp
 elif [[ "$1" == "--inc" ]]; then
 	if [[ $N -eq $F ]]; then
 		exit 0
