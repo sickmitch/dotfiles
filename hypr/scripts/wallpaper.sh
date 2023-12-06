@@ -9,12 +9,6 @@ D=$(cat ~/.config/hypr/scripts/defaultwp) #default da impostare all'avvio della 
 F=$(($(ls $PATHWP | wc -l) - 1))          #acquisisco il numero di wallpapers
 N=$(cat $NUM)                             #leggo il wallpaper attualmente impostato
 
-set_wall() { #imposto il wallpaper contenuto in I
-	hyprctl hyprpaper preload "$PATHWP$I"
-	hyprctl hyprpaper wallpaper "$MONITOR, $PATHWP$I"
-	hyprctl hyprpaper unload all
-}
-
 def_wp() {                                                                                      #wallpaper default
 	ls $PATHWP >$NOME                                                                              #salvo i nomi dei file in un file
 	mapfile -t array <$NOME                                                                        #inserisco i nomi in un array
@@ -24,49 +18,51 @@ def_wp() {                                                                      
 	echo $D >$NUM                                                                                  #imposto il wp di default come attualmente impostate
 }
 
-next_wp() {              #wallpaper successivo
-	N=$((N + 1))            #incremento il wallpaper attuale
-	mapfile -t array <$NOME #inserisco i nomi in un array
-	I=$(echo ${array[$N]})  #assegno il nome necessario all'indice
-	set_wall
-	echo $N >$NUM #scrivo il wallpaper attuale in tmp
+change_wp(){
+  if [[ "$X" == "--ran" ]]; then 
+    N=$(echo $((0 + $RANDOM % $F)))
+  elif [[ "$X" == "--inc" ]]; then 
+    N=$((N + 1)) 
+  elif [[ "$X" == "--dec" ]]; then 
+    N=$((N - 1))
+  fi
+  mapfile -t array <$NOME
+	I=$(echo ${array[$N]})
+	hyprctl hyprpaper preload "$PATHWP$I"
+	hyprctl hyprpaper wallpaper "$MONITOR, $PATHWP$I"
+	hyprctl hyprpaper unload all
+	echo $N >$NUM 
 }
 
-prev_wp() { #wallpaper precedente
-	N=$((N - 1))
-	mapfile -t array <$NOME #inserisco i nomi in un array
-	I=$(echo ${array[$N]})  #assegno il nome necessario all'indice
-	set_wall
-	echo $N >$NUM #scrivo il wallpaper attuale in tmp
-}
-
-random_wp(){
-	N=$(echo $((0 + $RANDOM % $F)))
-	mapfile -t array <$NOME #inserisco i nomi in un array
-	I=$(echo ${array[$N]})  #assegno il nome necessario all'indice
-	set_wall
-	echo $N >$NUM #scrivo il wallpaper attuale in tmp
+delete_wp(){
+  mapfile -t array <$NOME
+  I=$(echo ${array[$N]})
+  rm -f $PATHWP$I
+	notify-send -u normal "Wallpaper deleted"
 }
 
 #selettore di funzione
+X=$1
 if [[ "$1" == "--start" ]]; then 
 	def_wp
 elif [[ "$1" == "--def" ]]; then
-	echo $N >~/.config/hypr/scripts/defaultwp
-	notify-send -u normal "New Default Wallpaper"
+	echo $N > ~/.config/hypr/scripts/defaultwp
+	notify-send -u normal "New default wallpaper"
 elif [[ "$1" == "--ran" ]]; then
-  random_wp
+  change_wp
 elif [[ "$1" == "--inc" ]]; then
 	if [[ $N -eq $F ]]; then
 		exit 0
 	else
-		next_wp
+		change_wp
 	fi
 elif [[ "$1" == "--dec" ]]; then
 	if [[ $N -eq 0 ]]; then
 		exit 0
 	else
-		prev_wp
+		change_wp
 	fi
+elif [[ "$1" == "--del" ]]; then
+  delete_wp
 fi
 exit
