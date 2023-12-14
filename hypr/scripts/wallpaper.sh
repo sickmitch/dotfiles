@@ -1,6 +1,6 @@
 #!/bin/bash
 ### set here you're stuff ###
-PATHWP=~/Immagini/WP/wallpapers/ #cartella in cui cercare i wallpaper
+PATHWP=~/Immagini/WP/ #cartella in cui cercare i wallpaper
 MONITOR=eDP-1                     #nome del monitor da gestire
 ###
 NUM=/tmp/hypr/wallpaperNUM #percorsi per i file temp

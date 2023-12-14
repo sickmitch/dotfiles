@@ -1,3 +1,4 @@
+pulse/
 hypr/scripts/wallpaper.sh.bak
 marktext/
 waybar/scripts/sonixd.sh
@@ -27,7 +28,6 @@ autostart/
 /gtk-3.0
 /nicotine
 /neofetch
-/pulse
 /nvim
 /QtProject
 /spicetify
