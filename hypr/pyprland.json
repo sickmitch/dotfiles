@@ -2,7 +2,8 @@
 	"pyprland": {
 		"plugins": [
 			"scratchpads",
-			"expose"
+			"expose",
+      "toggle_special"
 		]
 	},
 	"scratchpads": {
