@@ -13,6 +13,9 @@ systemd/user/secret-service.service
 Nextcloud/
 appimagelauncher.cfg
 autostart/
+ardour8/
+borg/
+protonvpn/
 /btop
 /cava
 /dconf
@@ -37,6 +40,7 @@ autostart/
 /systemd/user/default.target.wants
 /systemd/user/timers.target.wants
 systemd/user/sockets.target.wants
+systemd/user/protonvpn_reconnect.service
 /Thunar
 /xfce4
 /nwg-look
