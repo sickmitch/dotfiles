@@ -13,7 +13,7 @@ def_wp() {                                                                      
 	ls $PATHWP >$NOME                                                                              #salvo i nomi dei file in un file
 	mapfile -t array <$NOME                                                                        #inserisco i nomi in un array
 	I=$(echo ${array[$D]})                                                                         #assegno ad I il nome del wallpaper da impostare
-	echo -e "preload = $PATHWP$I \nwallpaper = $MONITOR, $PATHWP$I \nsplash = false\n ipc = off" > ~/.config/hypr/hyprpaper.conf #genero il file per hyprpaper
+	echo -e "preload = $PATHWP$I \nwallpaper = $MONITOR, $PATHWP$I \nsplash = false\n ipc = on" > ~/.config/hypr/hyprpaper.conf #genero il file per hyprpaper
 	hyprpaper &                                                                                    #lancio hyprpaper
 	echo $D >$NUM                                                                                  #imposto il wp di default come attualmente impostate
 }

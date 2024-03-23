@@ -67,11 +67,11 @@
     "on-click": "sh -c '(nm-connection-editor)' & disown"
   },
   "hyprland/window": {
-    "format": "[{}]"
+    "format": "({})"
   },
   "custom/launch_fuzzel": {
     "format": "",
-    "on-click": "pkill fuzzel; fuzzel",
+    "on-click": "pkill wofi;wofi --location=top_left --height=1050 --width=310 --yoffset=-36 -i -s ~/.config/wofi/wofi.css --show=drun  # Show wofi",
     "tooltip": false
   },
   "cpu": {
@@ -115,14 +115,14 @@
     "format": "{icon}",
     "all-outputs": false,
     "on-click": "activate",
-    "persistent-workspaces": {
-      "1": [
-        "eDP-1"
-      ],
-      "2": [
-        "eDP-1"
-      ]
-    },
+    // "persistent-workspaces": {
+    //   "1": [
+    //     "eDP-1"
+    //   ],
+    //   "2": [
+    //     "eDP-1"
+    //   ]
+    // },
     "format-icons": {
       "1": "",
       "2": ""
@@ -130,7 +130,7 @@
     "sort-by-number": true
   },
   "clock": {
-    "format": "{:%I:%M %p}",
+    "format": "{:%I:%M}",
     "tooltip": true,
     "tooltip-format": "{:%A, %e %B %Y}"
   },
