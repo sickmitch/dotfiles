@@ -10,11 +10,11 @@
   "margin-bot": 5,
   "modules-left": [
     "custom/launch_fuzzel",
-    "hyprland/workspaces",
     "cpu",
     "memory",
     "disk",
     "disk#2",
+    "hyprland/workspaces",
     "hyprland/window"
   ],
   // "modules-center": [
@@ -34,7 +34,7 @@
     "clock"
   ],
   "tray": {
-    "icon-size": 15,
+    "icon-size": 16,
     "spacing": 20
   },
   "custom/sonixd": {
