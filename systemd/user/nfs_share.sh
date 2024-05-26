@@ -1,0 +1,1 @@
+/home/mike/Documenti/Tech/script/local/system/nfs_share.sh

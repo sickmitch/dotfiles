@@ -1,3 +1,11 @@
+Cursor/
+freeplane/
+gtk-4.0/
+gtkrc
+gtkrc-2.0
+libaccounts-glib/
+nvtop/
+solvespace/
 fluent-reader/
 warp-terminal/
 pulse/

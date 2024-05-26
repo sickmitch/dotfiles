@@ -1,0 +1,13 @@
+[Unit]
+Description=mount_nfs
+After=network-online.target
+Wants=network-online.target
+
+
+[Service]
+Type=oneshot
+ExecStart=/home/mike/.config/systemd/user/nfs_share.sh
+
+[Install]
+WantedBy=default.target
+
