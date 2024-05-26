@@ -9,7 +9,6 @@
   "margin-right": 10,
   "margin-bot": 5,
   "modules-left": [
-    "custom/launch_fuzzel",
     "cpu",
     "memory",
     "disk",
@@ -69,14 +68,14 @@
   "hyprland/window": {
     "format": "({})"
   },
-  "custom/launch_fuzzel": {
-    "format": "",
-    "on-click": "pkill wofi;wofi --location=top_left --height=1050 --width=310 --yoffset=-36 -i -s ~/.config/wofi/wofi.css --show=drun  # Show wofi",
-    "tooltip": false
-  },
+  // "custom/launch_fuzzel": {
+  //   "format": "",
+  //   "on-click": "pkill wofi;wofi --location=top_left --height=1050 --width=310 --yoffset=-36 -i -s ~/.config/wofi/wofi.css --show=drun  # Show wofi",
+  //   "tooltip": false
+  // },
   "cpu": {
     "interval": 10,
-    "format": " {usage}%",
+    "format": "  {usage}%",
     "max-length": 10,
     "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
   },
@@ -130,13 +129,13 @@
     "sort-by-number": true
   },
   "clock": {
-    "format": "{:%I:%M}",
+    "format": "{:%I:%M} ",
     "tooltip": true,
     "tooltip-format": "{:%A, %e %B %Y}"
   },
   "backlight": {
     "device": "intel_backlight",
-    "format": "{icon} {percent}%",
+    "format": "{icon}  {percent}%",
     "format-icons": [
       "󰃞",
       "󰃟",
@@ -171,7 +170,7 @@
     ]
   },
   "pulseaudio": {
-    "format": "{icon} {volume}%",
+    "format": "{icon}  {volume}%",
     "format-muted": "",
     "on-click": "pamixer -t",
     "on-click-right": "pavucontrol",

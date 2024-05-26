@@ -3,9 +3,9 @@
 PATHWP=~/Immagini/WP/ #cartella in cui cercare i wallpaper
 MONITOR=eDP-1                     #nome del monitor da gestire
 ###
-NUM=/tmp/hypr/wallpaperNUM #percorsi per i file temp
-NOME=/tmp/hypr/wallpaperNOME
-D=$(cat ~/.config/hypr/scripts/defaultwp) #default da impostare all'avvio della sessione
+NUM=~/.config/hypr/wallpaper/wallpaperNUM #percorsi per i file temp
+NOME=~/.config/hypr/wallpaper/wallpaperNOME
+D=$(cat ~/.config/hypr/wallpaper/defaultwp) #default da impostare all'avvio della sessione
 F=$(($(ls $PATHWP | wc -l) - 1))          #acquisisco il numero di wallpapers
 N=$(cat $NUM)                             #leggo il wallpaper attualmente impostato
 
@@ -30,7 +30,7 @@ change_wp(){
 	I=$(echo ${array[$N]})
 	hyprctl hyprpaper preload "$PATHWP$I"
 	hyprctl hyprpaper wallpaper "$MONITOR, $PATHWP$I"
-	hyprctl hyprpaper unload all
+  hyprctl hyprpaper unload unused
 	echo $N >$NUM 
 }
 
@@ -46,7 +46,7 @@ X=$1
 if [[ "$1" == "--start" ]]; then 
 	def_wp
 elif [[ "$1" == "--def" ]]; then
-	echo $N > ~/.config/hypr/scripts/defaultwp
+	echo $N > ~/.config/hypr/wallpaper/defaultwp
 	notify-send -u normal "New default wallpaper"
 elif [[ "$1" == "--ran" ]]; then
   change_wp
