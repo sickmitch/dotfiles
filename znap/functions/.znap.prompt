@@ -1,0 +1,97 @@
+#!/bin/zsh
+# instant prompt from repo
+# args: <repo> [ <theme> ]
+zmodload -F zsh/parameter p:functions
+zmodload -F zsh/zleparameter p:widgets
+autoload -Uz add-zsh-hook add-zle-hook-widget promptinit
+
+.znap.prompt() {
+  local theme=
+
+  if (( $# )); then
+    if [[ $1 == */* ]]; then
+      .znap.clone $1 ||
+          return
+    fi
+
+    local repo=$1 theme=${2:-${${${1:t}/(.zsh|zsh-)/}//-(prompt|theme)/}}
+    .znap.prompt.load
+  fi
+
+  ..znap.tput civis # Make cursor invisible.
+  ..znap.tput sc    # Save cursor position.
+  add-zsh-hook precmd .znap.prompt.precmd
+
+  # Temporarily redirect standard error to file.
+  mkdir -pm 0700 ${XDG_DATA_HOME:-$HOME/.local/share}/zsh-snap/err
+  typeset -gHi _znap_prompt_fd=-1
+  typeset -gH _znap_prompt_tmp==( <<< '' )
+  exec {_znap_prompt_fd}>&2  # Save a copy of std err.
+  exec 2> $_znap_prompt_tmp  # Redirect std err to tmp file.
+
+  promptinit
+  if [[ -n $theme ]]; then
+    prompt_themes+=( $theme )
+    prompt $theme
+    ..znap.tput sc  # Save cursor position (overwriting the previous save).
+
+    private _P__precmd=prompt_${theme}_precmd
+    if [[ -n $functions[$_P__precmd] ]]; then
+      $_P__precmd
+
+      # Ensure $_P__precmd doesn't get called twice before the first prompt.
+      functions[:znap:$_P__precmd]=$functions[$_P__precmd]
+      eval "$_P__precmd() {
+        functions[$_P__precmd]=\$functions[:znap:$_P__precmd]
+        unfunction :znap:$_P__precmd
+      }"
+    fi
+  fi
+
+  setopt NO_promptsp
+  print -nPr -- "%$COLUMNS<<${(l:$COLUMNS:: :)}$RPS1"
+  print -nPr -- $'\r'"$PS1"
+  ..znap.tput cnorm # Make cursor normal (visible).
+  true
+}
+
+.znap.prompt.precmd() {
+  add-zsh-hook -d precmd ${(%):-%N}
+
+  ..znap.tput civis # Make cursor invisible.
+  ..znap.tput rc    # Restore saved cursor position.
+
+  # If there are error messages, print them above the new prompt.
+  exec 2>&$_znap_prompt_fd   # Restore std error.
+  private err="$( < $_znap_prompt_tmp )"
+  [[ -n $err ]] &&
+      print -u2 -- "$err"
+  unset _znap_prompt_fd _znap_prompt_tmp
+
+  # Workaround for https://www.zsh.org/mla/workers/2021/msg01310.html
+  local -a match=() mbegin=() mend=()
+  if zstyle -L zle-hook types > /dev/null; then
+    private hook=
+    for hook in isearch-{exit,update} line-{pre-redraw,init,finish} history-line-set keymap-select
+    do
+      [[ $widgets[zle-$hook] == user:_zsh_highlight_widget_orig-s<->.<->-r<->-zle-$hook ]] &&
+          zle -N zle-$hook azhw:zle-$hook
+    done
+  fi
+
+  add-zle-hook-widget line-init .znap.prompt.line-init
+
+  return 0
+}
+
+.znap.prompt.line-init() {
+  add-zle-hook-widget -d line-init ${(%):-%N}
+
+  ..znap.tput cnorm # Make cursor normal (visible).
+  [[ -v prompt_opts ]] ||
+      setopt promptsp
+
+  return 0
+}
+
+.znap.prompt "$@"

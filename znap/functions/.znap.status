@@ -1,0 +1,57 @@
+#!/bin/zsh
+# fetch updates & show git status
+# args: [ <repo> ... ]
+autoload +X -Uz is-at-least
+
+.znap.status() {
+  emulate -L zsh; setopt $_znap_opts
+
+  {
+    local -a repos=()
+    local gitdir=''
+    ..znap.repos status "$@"
+
+    pushd -q $gitdir
+
+    .znap.multi '.znap.status.task '${(i)^repos}
+  } always {
+    popd -q
+  }
+}
+
+.znap.status.task() {
+  emulate -L zsh; setopt $_znap_opts
+
+  print -nr -- "${$( eval "ls -d $1" )%[/@]} "
+  builtin cd -q $1
+
+  local -a upstream=()
+  private err="$( ..znap.fetch )"
+
+  private rev= log="$( git log -n1 --decorate --oneline )"
+  if [[ $log ==  *'tag: '* ]]; then
+    private -a chunks=( ${(s.tag: .)log} )
+    rev="${chunks[1]##*[ (]}${chunks[2]%%[,)]*}"$'\e[m'
+  fi
+
+  .znap.ignore $1:t '*.zwc'  # Add `*.zwc` to repo's local ignore list.
+
+  private -aU lines=( "${(f)$( git status -sb )}" )
+  private branch=${${${lines[1]#'## '}%...*}:#*(main|master)*}
+
+  private -i MBEGIN MEND
+  private MATCH
+  private -aU changes=( ${(0)${${(F)lines[2,-1]}// [[:print:]]#($'\n'|)}//$'m\C-['/$'m\0\C-['} )
+  changes=( ${(@)changes[@]//(#m)('??'|'!!')/$MATCH[1]} )
+
+  private ahead_behind=
+  if [[ -z $err ]]; then
+    ahead_behind=${${(M)lines[1]% \[*\]}# }
+    [[ -z $ahead_behind && -z $changes ]] &&
+        ahead_behind=$'\e[32m✓\e[39m'
+  fi
+
+  print -r -- $rev ${err:-$branch} $ahead_behind $changes
+}
+
+.znap.status "$@"

@@ -1,0 +1,103 @@
+#compdef znap
+
+[[ -v _ZNAP_ARGS ]] ||
+    .znap.help &> /dev/null
+
+local -a subcommands=()
+local k; for k in ${(ko)_ZNAP_ARGS}; do
+  subcommands+=( "$k\:'$_ZNAP_ARGS[$k]'" )
+done
+
+local -A opt_args
+local -a opts=( -qS ' ' ) context line state state_descr
+_arguments -A '' -O opts : ":command:(( $subcommands ))" '*:: :->next'
+local ret=$?
+
+[[ $state == next ]] ||
+    return ret
+
+case $words[1] in
+  ( clean )
+    _arguments : '*:: :->dirs'
+  ;;
+  ( clone )
+    _arguments : '*:remote repository:_urls'
+  ;;
+  ( compdef )
+    _arguments : ':function name:' ': :_default'
+  ;;
+  ( compile )
+    _arguments : ': :_default'
+  ;;
+  ( eval )
+    _arguments : ': :->repos-caches' ': :_default'
+  ;;
+  ( function )
+    _arguments : '*:: :_normal'
+  ;;
+  ( help )
+    _arguments : ":command:(( $subcommands ))"
+  ;;
+  ( ignore )
+    _arguments : ': :->repos' ':pattern:'
+  ;;
+  ( install )
+    _arguments : '*:remote repository:_urls'
+  ;;
+  ( multi )
+    _arguments : ': :_default'
+  ;;
+  ( prompt )
+    _arguments : ': :->repos' '*:: :->themes'
+  ;;
+  ( pull )
+    _arguments : "*:: :->repos"
+  ;;
+  ( restart )
+    false
+  ;;
+  ( source )
+    _arguments : ": :->repos" '*:: :->repo-files'
+  ;;
+  ( status )
+    _arguments : "*:: :->repos"
+  ;;
+  ( uninstall )
+    _arguments : "*:: :->repos"
+  ;;
+esac
+ret=$(( ret && ? ))
+
+case $state in
+  ( dirs )
+    _alternative 'directories:directory:_files -/'
+  ;;
+  ( repo-files )
+    local repo=~[$words[1]]
+    [[ -d $repo ]] &&
+      _arguments : "*::file:_files -W $repo -F '*.zwc'"
+  ;;
+  ( repos-caches )
+    local -aU caches=( ${XDG_CACHE_HOME:-$HOME/.cache}/zsh-snap/eval/*.zsh(D-.) )
+    local -a repos=() opts=( -qS ' ' )
+    local gitdir=
+    ..znap.repos
+    _alternative -O opts "repositories:repo:($repos)" "cache-files:cache:(${caches[@]:t:r})"
+  ;;
+  ( repos )
+    local -a repos=() opts=( -qS ' ' )
+    local gitdir=
+    ..znap.repos
+    _alternative -O opts "repositories:repo:($repos)"
+  ;;
+  ( themes )
+    local repo=~[$words[1]]
+    if [[ -d $repo ]]; then
+      local -aU themes=( $repo/**.zsh-theme(-.) )
+      themes=( ${themes[@]:t:r} )
+      _arguments : "::prompt theme:($themes)"
+    fi
+  ;;
+esac
+
+return $(( ret && ? ))

@@ -1,0 +1,13 @@
+#!/bin/zsh
+add-zsh-hook -d preexec ..znap.auto-compile
+
+local -a include=() match=() mbegin=() mend=()
+local exclude=
+zstyle -s :znap: auto-compile-ignore exclude \| &&
+    exclude="($exclude)"
+include=( "${${(@vu)functions_source}[@]:#$~exclude}" )
+
+(( $#include )) &&
+    ( .znap.compile &> /dev/null ) &|
+
+true

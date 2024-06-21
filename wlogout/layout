@@ -6,7 +6,7 @@
 
 {
     "label" : "hibernate",
-    "action" : "systemctl hibernate",
+    "action" : "pkill tmux && systemctl hibernate",
     "text" : "Hibernate"
 }
 
@@ -18,18 +18,18 @@
 
 {
     "label" : "shutdown",
-    "action" : "systemctl poweroff",
+    "action" : "pkill tmux && systemctl poweroff",
     "text" : "Shutdown"
 }
 
 {
     "label" : "suspend",
-    "action" : "systemctl suspend",
+    "action" : "pkill tmux && systemctl suspend",
     "text" : "Suspend"
 }
 
 {
     "label" : "reboot",
-    "action" : "systemctl reboot",
+    "action" : "pkill tmux && systemctl reboot",
     "text" : "Reboot"
 }

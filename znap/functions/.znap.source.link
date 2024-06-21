@@ -1,0 +1,24 @@
+#!/bin/zsh
+emulate -L zsh
+setopt localoptions extendedglob NO_nomatch NO_nullglob
+zmodload -F zsh/files b:zf_ln b:zf_mkdir
+
+private -aU tmp=( $1${2:+/$2} ) ext=( '.plugin.zsh' '(|.*).zsh[^.]#' '.sh' )
+
+if [[ -d $tmp[1] ]]; then
+  tmp=( $tmp[1]/{*${(~j:?:)${=${tmp[1]:t}//[-_]/ }:#zsh}*,init,*}${^~ext}(NY1-.) )
+elif ! [[ -r $tmp[1] ]]; then
+  tmp=( ${tmp[1]}${^~ext}(NY1-.) )
+fi
+
+if ! (( $#tmp )); then
+  print -ru2 -- "znap source: file not found: $2"
+  return $(( sysexits[(i)NOINPUT] + 63 ))
+fi
+
+zf_mkdir -pm 0700 "$3:h"
+zf_ln -fhs "$tmp[1]" "$3" ||
+    return
+
+.znap.compile $tmp[1]
+return 0  # It doesn't matter if the compilation fails.

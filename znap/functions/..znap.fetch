@@ -1,0 +1,18 @@
+#!/bin/zsh
+emulate -L zsh; setopt $_znap_opts
+
+git fetch --prune &> /dev/null
+
+if ! upstream=( ${(s:/:)$( git rev-parse -q --abbrev-ref @{u} 2> /dev/null )} ); then
+  git branch -q --unset-upstream 2> /dev/null
+  return 1
+fi
+
+if ! git ls-remote -q --exit-code $upstream[@] > /dev/null && [[ $upstream[2] == master ]]; then
+  upstream=( --set-upstream $upstream[1] main )
+fi
+
+private msg=
+if ! msg="$( git fetch -t $upstream[@] 2>&1 > /dev/null )"; then
+  ..znap.error "$msg"
+fi

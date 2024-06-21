@@ -1,0 +1,22 @@
+#!/bin/zsh
+# install command output as a function
+# args: <function> <command>
+emulate -L zsh; setopt $_znap_opts
+zmodload -F zsh/files b:zf_mkdir
+
+private _P__name=$1 _P__generator=$2 dir=${XDG_DATA_HOME:-$HOME/.local/share}/zsh/site-functions
+shift 2
+
+zf_mkdir -pm 0700 $dir
+
+private _P__file=$dir/$_P__name
+eval "$_P__generator" >| $_P__file ||
+    return
+
+print -r -- "#$_P__generator" >>| $_P__file
+.znap.compile $_P__file
+
+[[ -f $_comp_dumpfile ]] &&
+    zf_rm -f $_comp_dumpfile
+
+true

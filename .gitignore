@@ -1,3 +1,8 @@
+systemd/user/git-maintenance@.service
+systemd/user/git-maintenance@daily.timer
+systemd/user/git-maintenance@hourly.timer
+systemd/user/git-maintenance@weekly.timer
+
 Cursor/
 freeplane/
 gtk-4.0/

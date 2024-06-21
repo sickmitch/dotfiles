@@ -1,0 +1,42 @@
+#!/bin/zsh
+# load plugins
+# args: <repo> [ <dir> | <file> ] ...
+zmodload -Fa zsh/files b:zf_rm
+
+if ! (( $# )); then
+  print -u2 'znap source: not enough arguments'
+  .znap.help source
+  return $(( sysexits[(i)USAGE] + 63 ))
+fi
+
+if [[ $1 == */* ]]; then
+  .znap.clone $1 ||
+      return
+fi
+private _P__repo=~[$1]
+
+private _P__state=$XDG_STATE_HOME/znap
+private _P__file='' _P__src=''
+shift
+
+for _P__src in ${@:-''}; do
+  [[ -h $XDG_STATE_HOME/${_P__repo:t2}${_P__src:+.}${_P__src//\//.} ]] &&
+      zf_rm -fr $XDG_STATE_HOME/${_P__repo:t2:h}
+
+  _P__file=$_P__state/${_P__repo:t2}${_P__src:+.}${_P__src//\//.}
+  if ! [[ -r $_P__file:P ]]; then
+    .znap.source.link "$_P__repo" "$_P__src" "$_P__file" ||
+        return
+  fi
+
+  # Wrap in a named function for profiling purposes.
+  .znap.source:${_P__file:t}() {
+    . "$1"
+  }
+  {
+    .znap.source:${_P__file:t} "$_P__file:P"
+  } always {
+    TRY_BLOCK_ERROR=
+    unfunction .znap.source:${_P__file:t}
+  }
+done

@@ -1,0 +1,71 @@
+#!/bin/zsh
+# compile zsh scripts and functions
+# args: [ ( <dir> | <file> ) ... ]
+emulate -L zsh; setopt $_znap_opts
+zmodload -F zsh/files b:zf_rm
+zmodload -F zsh/parameter p:functions_source
+
+private -aU dirs=() files=() bugs=()
+if (( $# )); then
+  bugs=( $^dirs/**?.zwc.zwc )
+  (( $#bugs[@] )) &&
+      zf_rm -- $bugs[@]
+  dirs=( $^@(N-/:a) $^@/**(N-/:a) )
+  files=( $^@(N-.:a) $^dirs/*~*.zwc~*(#i)test*(ND-.) )
+else
+  files=( ${(@vu)functions_source} )
+fi
+files=( ${(@n)files} )
+
+private -i ret=0
+private f= func= opt=
+while (( $#files[@] )); do
+  {
+    f=$files[1]
+    shift files
+    if ! [[ -w $f:h ]]; then
+      print -Pru2 -- "${(D)f:h} %F{red}not writable%f"
+      files=( ${files:#${f:h}/[^/]##} )
+      continue
+    fi
+
+    if [[ $f.zwc -ot $f ]]; then
+      if ! zf_rm -f -- $f.zwc; then
+        print -Pru2 -- "${(D)f}.zwc %F{red}not writable%f"
+        continue
+      fi
+    fi
+
+    if ! [[ -r $f ]]; then
+      print -Pru2 -- "${(D)f} %F{red}not readable%f"
+      continue
+    fi
+
+    if ! [[ -e $f.zwc ]]; then
+      func=${(k)functions_source[(r)$f:a]}
+      if [[ -n $func && $func == $f:t ]] || (( fpath[(i)$f:a:h] )); then
+        opt=zM
+      else
+        opt=R
+      fi
+
+      if emulate zsh -c "zcompile -U$opt -- ${(q)f}"; then
+        if [[ $funcstack[2] == znap ]] ; then
+          print -Pr -- "${(D)f:h}/%F{green}$f:t.zwc%f"
+        fi
+      else
+        ret=1
+        zf_rm -f -- $f.zwc
+      fi
+    fi
+  } always {
+    if [[ -f $f.zwc ]]; then
+      if zmodload -F zsh/files b:zf_chmod &> /dev/null; then
+        builtin zf_chmod 640 $f.zwc
+      else
+        command chmod 640 $f.zwc
+      fi
+    fi
+  }
+done
+return ret

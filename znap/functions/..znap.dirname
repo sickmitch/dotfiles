@@ -1,0 +1,78 @@
+#!/bin/zsh
+
+# Resolve ~[$1]
+..znap.dirname.n() {
+  emulate -L zsh; setopt extendedglob
+  private -a dirs=()
+
+  local gitdir=''
+  ..znap.repos-dir
+
+  case $1 in
+    ( ${1:t} )
+      dirs=( $gitdir/{*/,}$1/.git(Non-/:h) )
+    ;;
+    ( ${1:t2} )
+      dirs=( $gitdir/$1/.git(Non-/:h) )
+    ;;
+  esac
+
+  (( $#dirs[@] == 1 )) ||
+      return
+
+  reply=( $dirs )
+}
+
+# ~Abbreviate $1
+..znap.dirname.d() {
+  emulate -L zsh; setopt extendedglob
+
+  local gitdir=''
+  ..znap.repos-dir
+
+  [[ $1 != $gitdir/* ]] &&
+      return 1
+
+  private subdirs=${1#$gitdir}
+  private repo=$gitdir
+  private next=
+  while [[ ! -d $repo/.git && -n $subdirs ]]; do
+    next=${subdirs:h2}
+    repo+=$next
+    subdirs=${subdirs#$next}
+  done
+  private name=${repo#$gitdir}
+
+  [[ -d $gitdir/$name/.git ]] ||
+      return 1
+
+  private -a samenamed=( $gitdir/{,*/}${name:t}/.git(N-/) )
+  (( $#samenamed[@] == 1 )) &&
+    name=${name:t}
+  reply=( "$name" $#repo )
+}
+
+# Complete ~[...]
+..znap.dirname.c() {
+  if [[ -n $ISUFFIX ]]; then
+    # Workaround: In Zsh <= 5.9.0, _setup doesn't get called when completing inside a subscript.
+    _setup default
+  else
+    local suf=-S]
+  fi
+
+  local -a expl=()
+  _description named-directories expl 'named directory'
+
+  local -a repos=()
+  local gitdir=
+  ..znap.repos
+
+  builtin compadd "$expl[@]" $suf -a -- repos
+}
+
+..znap.dirname() {
+  ..znap.dirname.$1 "$2"
+}
+
+..znap.dirname "$@"

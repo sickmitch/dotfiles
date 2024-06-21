@@ -1,0 +1,26 @@
+#!/bin/zsh
+# download repos in parallel
+# args: ( <user>/<repo> | <url> ) ...
+emulate -L zsh; setopt $_znap_opts
+
+if (( $# < 1 )); then
+  print -u2 "znap clone: not enough arguments"
+  .znap.help clone
+  return $(( sysexits[(i)USAGE] + 63 ))
+fi
+
+local -a match=() mbegin=() mend=()
+private repo=''
+for repo in $@; do
+  if [[ $repo != ([^/]##/[^/]##|*(@|://)*/*.git) ]] && ! [[ -d ${repo#file://} && $repo == */.git ]]; then
+    print -u2 "znap clone: invalid argument '$repo'"
+    .znap.help clone
+    return $(( sysexits[(i)USAGE] + 63 ))
+  fi
+done
+
+local server=''
+zstyle -s :znap:clone: default-server server ||
+    server='https://github.com/'
+.znap.multi ".znap.clone.task $server "$^@ ||
+      return 'sysexits[(i)IOERR] + 63'

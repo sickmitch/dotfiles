@@ -1,0 +1,84 @@
+#!/bin/zsh
+# update repos in parallel
+# args: [ <repo> ... ]
+zmodload -Fa zsh/files b:zf_rm
+autoload +X -Uz is-at-least
+
+.znap.pull() {
+  emulate -L zsh; setopt $_znap_opts
+
+  local gitdir=''
+  ..znap.repos-dir
+
+  private link='' bindir=~/.local/bin datadir=${XDG_DATA_HOME:-$HOME/.local/share}/zsh/site-functions
+  for link in {$bindir,$datadir}/*(N@); do
+    [[ $( readlink -f $link ) == $gitdir/* ]] &&
+        zf_rm $link
+  done
+
+  (
+    builtin cd -q $gitdir
+
+    local -a repos=()
+    ..znap.repos pull "$@"
+
+    private r=
+    for r in $repos; do
+      git -C $r config --local submodule.fetchJobs 0
+    done
+
+    if is-at-least 2.31 ${${=$( git --version )}[3]}; then
+      local -a match=() mbegin=() mend=()
+      for r in $repos; do
+        if zstyle -T :znap:pull:${r:t} git-maintenance; then
+          git -C $r maintenance start &> /dev/null
+        else
+          git -C $r maintenance unregister &> /dev/null
+        fi
+      done
+    fi
+
+    .znap.multi '.znap.pull.task '${(i)^repos}
+  )
+}
+
+.znap.pull.task() {
+  emulate -L zsh; setopt $_znap_opts
+
+  print -nr -- "${$( eval "ls -d $1" )%[/@]} "
+  builtin cd -q $1
+
+  local -a upstream=()
+  if ! ..znap.fetch; then
+    ..znap.error no upstream
+    return 1
+  fi
+
+  .znap.ignore $1:t '*.zwc'  # Add `*.zwc` to repo's local ignore list.
+
+  private -a count=()
+  if count=( ${="$( git rev-list --count --left-right @{u}...@ 2> /dev/null )"} ); then
+    if (( count[2] )); then
+      print -P "%F{yellow}ahead $count[2]%f"
+      return
+    elif (( count[1] )); then
+      print -n 'updating... '
+
+      local msg=
+      if ! msg=$( git pull -q -r --recurse-submodules $upstream[@] 2>&1 > /dev/null ); then
+        ..znap.error $=msg
+        return
+      else
+        private cache_dir=$XDG_CACHE_HOME/zsh-snap
+        zf_rm -f -- $_comp_dumpfile $cache_dir/fpath/_$1:t $cache_dir/eval/${1:t}.zsh
+        .znap.compile $1 &> /dev/null &|
+        print -P '%F{green}done%f'
+      fi
+    else
+      print -n '\r'
+      ..znap.tput el  # Clear to end of line.
+    fi
+  fi
+}
+
+.znap.pull "$@"

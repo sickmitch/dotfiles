@@ -12,12 +12,15 @@
 			"unfocus": "hide",
 			"animation": "fromTop",
       "margin": 47
-		},
-		"volume": {
-			"command": "pavucontrol",
-			"animation": "fromRight",
-      "margin": 10,
-			"unfocus": "hide"
-		}
+    },
+    "volume": {
+    "animation" : "fromRight",
+    "command" : "pavucontrol",
+    "class" : "pavucontrol-dropterm",
+    "size" : "40% 80%",
+    "unfocus" : "hide",
+    "lazy" : true,
+    "margin": 14
+    }
 	}
 }
