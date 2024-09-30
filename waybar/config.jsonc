@@ -13,6 +13,7 @@
     "memory",
     "disk",
     "disk#2",
+    "disk#3",
     "hyprland/workspaces",
     "hyprland/window"
   ],
@@ -81,7 +82,7 @@
   },
   "disk": {
     "interval": 30,
-    "format": "/ 󰋊 {percentage_used}%",
+    "format": "ROOT 󰋊 {percentage_used}%",
     "path": "/",
     "tooltip": true,
     "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
@@ -89,8 +90,16 @@
   },
   "disk#2": {
     "interval": 30,
-    "format": "~ 󰋊 {percentage_used}%",
+    "format": "HOME 󰋊 {percentage_used}%",
     "path": "/home/mike/",
+    "tooltip": true,
+    "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
+    "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+  },
+  "disk#3": {
+    "interval": 30,
+    "format": "NAS 󰋊 {percentage_used}%",
+    "path": "/home/mike/NAS/",
     "tooltip": true,
     "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
     "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"

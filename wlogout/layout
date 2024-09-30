@@ -1,4 +1,10 @@
 {
+    "label" : "shutdown",
+    "action" : "pkill tmux ; systemctl poweroff",
+    "text" : "Shutdown"
+}
+
+{
     "label" : "lock",
     "action" : "swaylock",
     "text" : "Lock"
@@ -6,7 +12,7 @@
 
 {
     "label" : "hibernate",
-    "action" : "pkill tmux && systemctl hibernate",
+    "action" : "pkill tmux ; systemctl hibernate",
     "text" : "Hibernate"
 }
 
@@ -17,19 +23,13 @@
 }
 
 {
-    "label" : "shutdown",
-    "action" : "pkill tmux && systemctl poweroff",
-    "text" : "Shutdown"
-}
-
-{
     "label" : "suspend",
-    "action" : "pkill tmux && systemctl suspend",
+    "action" : "pkill tmux ; systemctl suspend",
     "text" : "Suspend"
 }
 
 {
     "label" : "reboot",
-    "action" : "pkill tmux && systemctl reboot",
+    "action" : "pkill tmux ; systemctl reboot",
     "text" : "Reboot"
 }

@@ -4,7 +4,7 @@
 TARGET_SSID="MeS"
 
 # NFS server and share
-NFS_SERVER="192.168.1.20"
+NFS_SERVER="192.168.1.22"
 NFS_SHARE="/"
 MOUNT_POINT="/home/mike/NAS/"
 

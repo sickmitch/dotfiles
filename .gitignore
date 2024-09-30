@@ -2,7 +2,20 @@ systemd/user/git-maintenance@.service
 systemd/user/git-maintenance@daily.timer
 systemd/user/git-maintenance@hourly.timer
 systemd/user/git-maintenance@weekly.timer
-
+wayvnc/
+Hardcode-Tray/
+Hardcoded Software/
+Provision/
+Yubico/
+go/
+gpick/
+ibus/
+nordvpn/
+rclone/
+remmina/
+sublime-music/
+systemd/user/rclone-nextcloud.service
+tint2/
 Cursor/
 freeplane/
 gtk-4.0/
