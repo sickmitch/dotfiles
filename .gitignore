@@ -2,6 +2,7 @@ systemd/user/git-maintenance@.service
 systemd/user/git-maintenance@daily.timer
 systemd/user/git-maintenance@hourly.timer
 systemd/user/git-maintenance@weekly.timer
+tool_state
 wayvnc/
 Hardcode-Tray/
 Hardcoded Software/
