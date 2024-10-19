@@ -21,7 +21,7 @@
   // ],
   "modules-right": [
     "custom/media",
-    "custom/sonixd",
+    // "custom/sonixd",
     "custom/updates",
     "tray",
     "bluetooth",
