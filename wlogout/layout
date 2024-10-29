@@ -5,27 +5,9 @@
 }
 
 {
-    "label" : "lock",
-    "action" : "swaylock",
-    "text" : "Lock"
-}
-
-{
-    "label" : "hibernate",
-    "action" : "pkill tmux ; systemctl hibernate",
-    "text" : "Hibernate"
-}
-
-{
     "label" : "logout",
     "action" : "hyprctl dispatch exit 0",
     "text" : "Logout"
-}
-
-{
-    "label" : "suspend",
-    "action" : "pkill tmux ; systemctl suspend",
-    "text" : "Suspend"
 }
 
 {

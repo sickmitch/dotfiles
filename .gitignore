@@ -1,3 +1,4 @@
+MusicBrainz/
 systemd/user/git-maintenance@.service
 systemd/user/git-maintenance@daily.timer
 systemd/user/git-maintenance@hourly.timer
@@ -50,7 +51,6 @@ protonvpn/
 /btop
 /cava
 /dconf
-/fastfetch
 /gh
 /nvim.bak
 /vlc

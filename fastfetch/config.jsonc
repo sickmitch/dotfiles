@@ -1,0 +1,98 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "raw",
+    "source": "Scaricati/ascii-art.txt",
+    "padding": {
+      "right": 35
+    }
+  },
+  "display": {
+    "separator": ""
+  },
+  "modules": [
+    // Title
+    {
+      "type": "title",
+      "format": "\u001b[34m╭──────── \u001b[32m{user-name} \u001b[34m────────╮"
+    },
+    // System Information
+    {
+      "type": "custom",
+      "format": "\u001b[34m│ System Information   ╰"
+    },
+    {
+      "type": "os",
+      "key": "\u001b[34m│  \u001b[32m󰍹 OS\t\t"
+    },
+    {
+      "type": "kernel",
+      "key": "\u001b[34m│  \u001b[32m󰒋 Kernel\t\t"
+    },
+    {
+      "type": "uptime",
+      "key": "\u001b[34m│  \u001b[32m󰅐 Uptime\t\t"
+    },
+    {
+      "type": "packages",
+      "key": "\u001b[34m│  \u001b[32m󰏖 Packages\t",
+      "format": "{all}"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[34m│"
+    },
+    // Desktop Environment
+    {
+      "type": "custom",
+      "format": "\u001b[34m│ Desktop Environment"
+    },
+    {
+      "type": "wm",
+      "key": "\u001b[34m│  \u001b[32m󱂬 WM\t\t"
+    },
+    {
+      "type": "display",
+      "key": "\u001b[34m│  \u001b[32m󰹑 Resolution\t"
+    },
+    {
+      "type": "shell",
+      "key": "\u001b[34m│  \u001b[32m󰞷 Shell\t\t"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[34m│"
+    },
+    // Hardware Information
+    {
+      "type": "custom",
+      "format": "\u001b[34m│ Hardware Information"
+    },
+    {
+      "type": "cpu",
+      "key": "\u001b[34m│  \u001b[32m󰻠 CPU\t\t"
+    },
+    {
+      "type": "gpu",
+      "key": "\u001b[34m│  \u001b[32m󰢮 GPU\t\t"
+    },
+    {
+      "type": "memory",
+      "key": "\u001b[34m│  \u001b[32m󰍛 Memory\t\t"
+    },
+    {
+      "type": "disk",
+      "key": "\u001b[34m│  \u001b[32m󰋊 Disk (/)\t",
+      "folders": "/"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[34m│                       ╭"
+    },
+    // Footer
+    {
+      "type": "custom",
+      "format": "\u001b[34m╰───────────────────────╯"
+    }
+  ]
+}

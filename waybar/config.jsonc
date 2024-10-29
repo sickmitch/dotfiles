@@ -14,6 +14,7 @@
     "disk",
     "disk#2",
     "disk#3",
+    "disk#4",
     "hyprland/workspaces",
     "hyprland/window"
   ],
@@ -98,8 +99,16 @@
   },
   "disk#3": {
     "interval": 30,
-    "format": "NAS 󰋊 {percentage_used}%",
-    "path": "/home/mike/NAS/",
+    "format": "NAS-DATA 󰋊 {percentage_used}%",
+    "path": "/home/mike/NAS/data",
+    "tooltip": true,
+    "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
+    "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+  },
+  "disk#4": {
+    "interval": 30,
+    "format": "NAS-BACK 󰋊 {percentage_used}%",
+    "path": "/home/mike/NAS/backup/",
     "tooltip": true,
     "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
     "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
