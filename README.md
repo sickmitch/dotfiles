@@ -1,4 +1,4 @@
-![Imgur](https://i.imgur.com/1UvZwxS.png)
+![Imgur](https://imgur.com/FpZ3QQ7)
 
 # HyprDotfiles
 
