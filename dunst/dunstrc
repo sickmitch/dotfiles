@@ -43,7 +43,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 0
+    transparency = 20
 
     # The height of the entire notification.  If the height is smaller
     # than the font height and padding combined, it will be raised
@@ -67,8 +67,7 @@
     frame_width = 2
 
     # Defines color of the frame around the notification window.
-    #frame_color = "#e83ba0"
-    frame_color = "#74c7ec"
+    frame_color = "#e83ba0"
 
     # Define a color for the separator.
     # possible values are:
@@ -169,7 +168,7 @@
     ### Icons ###
 
     # Align icons left/right/off
-    icon_position = left
+    icon_position = right
 
     # Scale small icons up to this size, set to 0 to disable. Helpful
     # for e.g. small files or high-dpi screens. In case of conflict,
