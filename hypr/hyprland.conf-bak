@@ -5,13 +5,7 @@ env = GBM_BACKEND,nvidia-drm
 env = __GLX_VENDOR_LIBRARY_NAME,nvidia
 
 cursor {
-    no_hardware_cursors = false
-    sync_gsettings_theme = true
-    warp_on_change_workspace = false
-    enable_hyprcursor = true
-    zoom_factor = 1
-    zoom_rigid = false
-
+    no_hardware_cursors = true
 }
 
 # Setup monitors
@@ -26,9 +20,7 @@ exec-once = waybar # The top bar
 exec-once = wl-paste --type text --watch cliphist store #clip setup
 exec-once = pypr
 exec-once = nm-applet &
-exec-once = hyprctl setcursor Future-Cyan-Hyprcursor_Theme 32
-exec-once = gsettings set org.gnome.desktop.interface gtk-theme catppuccin-mocha-blue-standard+default
-
+exec-once = hyprctl setcursor Future-Cyan-Hyprcursor_Theme 24
 exec-once = [workspace 1] kitty tmux new-session "fastfetch; exec $SHELL"
 exec-once = [workspace 2 silent] MOZ_ENABLE_WAYLAND=1 floorp
 exec-once = [workspace 3 silent] steam -silent %U
@@ -59,9 +51,8 @@ general {
     gaps_out = 10
     border_size = 2
     col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg 
+#    col.group_border_active
     layout = dwindle
-    hover_icon_on_border = false
-    gaps_workspaces = 0
 }
 
 misc {
@@ -71,19 +62,16 @@ misc {
 }
 
 decoration {
-    rounding = 10
+    rounding = 5
     blurls = lockscreen
-    drop_shadow = true
-    shadow_range = 6
+    drop_shadow = no
+    shadow_range = 10
     shadow_render_power = 1
-    col.shadow = rgba(1A5FB4FF)
-    col.shadow_inactive = rgba(000000FF)
-    dim_inactive = true
-    dim_strength = 0.30000000000000004
+    col.shadow = rgba(7f98cefc)
 }
 
 animations {
-    enabled = true
+    enabled = yes 
     bezier = myBezier, 0.10, 0.9, 0.1, 1.05
     bezier = overshot,0.05,0.9,0.1,1.1
     animation = windows, 1, 10, myBezier, slide
@@ -91,12 +79,10 @@ animations {
     animation = border, 1, 10, default
     animation = fade, 1, 7, default
     animation = workspaces, 1, 6, default
-    first_launch_animation = false
 }
 
 gestures {
-    workspace_swipe = true
-    workspace_swipe_fingers = 3
+    workspace_swipe = yes
 }
 
 # Example windowrule v1
@@ -214,6 +200,7 @@ bind = $mainMod SHIFT, 6, movetoworkspace, 6
 bind = $mainMod SHIFT, 7, movetoworkspace, 7
 bind = $mainMod SHIFT, 8, movetoworkspace, 8
 bind = $mainMod SHIFT, 9, movetoworkspace, 9
+bind = $mainMod SHIFT, 0, movetoworkspace, special
 bind = $mainMod SHIFT, h, movetoworkspace, r-1
 bind = $mainMod SHIFT, l, movetoworkspace, r+1
 
@@ -227,14 +214,11 @@ bind = $mainMod CTRL , 6, movetoworkspacesilent, 6
 bind = $mainMod CTRL , 7, movetoworkspacesilent, 7
 bind = $mainMod CTRL , 8, movetoworkspacesilent, 8
 bind = $mainMod CTRL , 9, movetoworkspacesilent, 9
+bind = $mainMod CTRL , 0, movetoworkspacesilent, special
 bind = $mainMod CTRL , h, movetoworkspacesilent, r-1
 bind = $mainMod CTRL , l, movetoworkspacesilent, r+1
 
 # Specials
-
-bind = $mainMod, N, togglespecialworkspace 
-bind = $mainMod CTRL, N, movetoworkspacesilent, special
-bind = $mainMod SHIFT, N, movetoworkspace, special
 
 #Scratchpads
 bind = $mainMod,V,exec,pypr toggle volume
@@ -252,6 +236,7 @@ windowrule = size 60% 50%,$dropterm
 #binds
 bind = $mainMod SHIFT, M, exec, pypr toggle_special mini # minimizza la finestra
 bind = $mainMod, M, togglespecialworkspace, mini #mostra minimizzate
+bind = $mainMod, 0, togglespecialworkspace #mostra logseq
 bind = $mainMod, W ,exec, pypr expose #modalità expose
 
 # Mouse
@@ -263,16 +248,3 @@ bind = $mainMod, mouse_up, workspace, e-1
 # Move/resize windows with mainMod + LMB/RMB and dragging
 bindm = $mainMod, mouse:272, movewindow
 bindm = $mainMod, mouse:273, resizewindow
-
-opengl {
-    nvidia_anti_flicker = true
-}
-
-xwayland {
-    enabled = true
-}
-
-debug {
-    overlay = false
-    damage_blink = false
-}
