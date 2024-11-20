@@ -1,12 +1,14 @@
 #!/bin/bash
 
 # SSID target
-TARGET_SSID="MeS"
+TARGET_SSID="Vodafone-MeS"
 
-# NFS server and share
-NFS_SERVER="192.168.1.22"
-NFS_SHARE="/"
-MOUNT_POINT="/home/mike/NAS/"
+# NFS server and shares
+NFS_SERVER="192.168.1.21"
+NFS_SHARES=(
+    "/share/:/home/mike/NAS/"
+    "/share/data/documenti/:/home/mike/Documenti/"
+)
 
 # Check if connected to the target SSID
 current_ssid=$(iwgetid -r)
@@ -14,24 +16,29 @@ current_ssid=$(iwgetid -r)
 if [ "$current_ssid" == "$TARGET_SSID" ]; then
     echo "Connected to $TARGET_SSID."
 
-    # Check if mount point exists, if not, create it
-    if [ ! -d "$MOUNT_POINT" ]; then
-        mkdir -p "$MOUNT_POINT"
-    fi
-
-    # Check if already mounted
-    if mount | grep -q "$MOUNT_POINT"; then
-        echo "NFS share already mounted."
-    else
-        # Mount the NFS share
-        sudo mount -t nfs "$NFS_SERVER:$NFS_SHARE" "$MOUNT_POINT"
+    # Loop through each share
+    for share_mapping in "${NFS_SHARES[@]}"; do
+        IFS=':' read -r share mount_point <<< "$share_mapping"
         
-        if [ $? -eq 0 ]; then
-            echo "NFS share mounted successfully."
-        else
-            echo "Failed to mount NFS share."
+        # Check if mount point exists, if not, create it
+        if [ ! -d "$mount_point" ]; then
+            mkdir -p "$mount_point"
         fi
-    fi
+
+        # Check if already mounted
+        if mount | grep -q "$mount_point"; then
+            echo "NFS share $share already mounted at $mount_point"
+        else
+            # Mount the NFS share
+            sudo mount -t nfs "$NFS_SERVER:$share" "$mount_point"
+            
+            if [ $? -eq 0 ]; then
+                echo "NFS share $share mounted successfully at $mount_point"
+            else
+                echo "Failed to mount NFS share $share at $mount_point"
+            fi
+        fi
+    done
 else
     echo "Not connected to $TARGET_SSID. No action taken."
 fi
