@@ -1,6 +1,6 @@
-@define-color base           #1E1E2EBB ;
+@define-color base           #1E1E2E ;
 @define-color blue_border    #2C9FB5 ;
-@define-color primary_yellow #B08130 ;
+@define-color primary_yellow #ffb347 ;
 @define-color base_alt       #282f3e ;
 @define-color primary_blue   #b6c0cd ;
  
@@ -10,7 +10,7 @@
 }
  
 window {
-    border: 3px solid @blue_border;
+    border: 1px solid @primary_yellow;
     border-radius: 10px;
 }
  

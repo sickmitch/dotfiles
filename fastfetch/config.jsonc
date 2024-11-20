@@ -1,10 +1,16 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "type": "raw",
-    "source": "Scaricati/ascii-art.txt",
+    "type": "auto",
+    "source": "hypros",
     "padding": {
-      "right": 35
+      "left": 5,
+      "right": 15
+    },
+    "color": {
+      "1": "blue",
+      "2": "cyan",
+      "3": "green"
     }
   },
   "display": {
@@ -27,11 +33,11 @@
     },
     {
       "type": "kernel",
-      "key": "\u001b[34m│  \u001b[32m󰒋 Kernel\t\t"
+      "key": "\u001b[34m│  \u001b[32m󰒋 Kernel\t"
     },
     {
       "type": "uptime",
-      "key": "\u001b[34m│  \u001b[32m󰅐 Uptime\t\t"
+      "key": "\u001b[34m│  \u001b[32m󰅐 Uptime\t"
     },
     {
       "type": "packages",
@@ -57,7 +63,7 @@
     },
     {
       "type": "shell",
-      "key": "\u001b[34m│  \u001b[32m󰞷 Shell\t\t"
+      "key": "\u001b[34m│  \u001b[32m󰞷 Shell\t"
     },
     {
       "type": "custom",
@@ -78,7 +84,7 @@
     },
     {
       "type": "memory",
-      "key": "\u001b[34m│  \u001b[32m󰍛 Memory\t\t"
+      "key": "\u001b[34m│  \u001b[32m󰍛 Memory\t"
     },
     {
       "type": "disk",

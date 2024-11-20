@@ -1,17 +1,14 @@
 {
     "label" : "shutdown",
     "action" : "pkill tmux ; systemctl poweroff",
-    "text" : "Shutdown"
 }
 
 {
     "label" : "logout",
     "action" : "hyprctl dispatch exit 0",
-    "text" : "Logout"
 }
 
 {
     "label" : "reboot",
     "action" : "pkill tmux ; systemctl reboot",
-    "text" : "Reboot"
 }
