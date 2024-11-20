@@ -31,15 +31,15 @@ tooltip label{
     margin-right: 5px;
 }
 #workspaces button.active {
-    color: #ff6961;
+    color: #0000ff;
 }
 #workspaces button.focused {
     color: #a6adc8;
     background: #eba0ac;
 }
 #workspaces button.urgent {
-    color: #11111b;
-    background: #a6e3a1;
+    color: #33ccff;;
+    background: #1e1e2e;
 }
 #workspaces button:hover {
     background: #11111b;
@@ -59,17 +59,16 @@ tooltip label{
 #tray,
 #temperature,
 #workspaces,
-#network,
 #bluetooth,
 #custom-media,
 #backlight {
     padding: 0px 10px;
     margin: 2px 0px;
 }
-#custom-launch_fuzzel {
-    color: #89b4fa;
-    margin-left: 10px;
-    border-right: 0px;
+#custom-mesh,
+#network {
+    padding: 0px 15px;
+    margin: 2px 0px;
 }
 #battery.warning{
   color: #fdfd96
@@ -101,11 +100,15 @@ tooltip label{
   color: #fdfd96;
 }
 #backlight,
-#pulseaudio.microphone,
 #pulseaudio {
     color: #89b4fa;
 }
-#network,
+#custom-mesh {
+    color: #E0BBE4;
+}
+#network {
+    color: #EFBE7D;
+}
 #bluetooth {
     color: #a6e3a1;
 }

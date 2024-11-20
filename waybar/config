@@ -1,8 +1,8 @@
 {
   "layer": "top",
   "position": "top",
-  "mod": "dock",
-  "exclusive": true,
+  // "mod": "dock",
+  // "exclusive": true,
   "height": 31,
   "margin-top": 5,
   "margin-left": 10,
@@ -12,24 +12,21 @@
     "cpu",
     "memory",
     "disk",
-    "disk#2",
-    "disk#3",
-    "disk#4",
-    "hyprland/workspaces",
-    "hyprland/window"
+    "disk#2"
   ],
-  // "modules-center": [
-  // ],
+  "modules-center": [
+    "hyprland/workspaces"
+//    "hyprland/window"
+   ],
   "modules-right": [
     "custom/media",
-    // "custom/sonixd",
     "custom/updates",
     "tray",
+    "custom/mesh",
+    "network",
     "bluetooth",
     "backlight",
     "pulseaudio",
-    // "pulseaudio#microphone",
-    // "network",
     "temperature",
     "battery",
     "clock"
@@ -38,17 +35,17 @@
     "icon-size": 16,
     "spacing": 20
   },
-  "custom/sonixd": {
-    "exec": "/usr/bin/bash /home/mike/.config/waybar/scripts/sonixd.sh",
-    "format": "{} 󰎌",
-    "on-click": "playerctl play-pause",
-    "escape": true
-  },
   "custom/media": {
     "exec": "/usr/bin/python3 /home/mike/.config/waybar/scripts/mediaplayer.py --player spotify",
     "format": "{} ",
     "return-type": "json",
     "on-click": "playerctl play-pause",
+    "escape": true
+  },
+  "custom/mesh": {
+    "on-click": "sh -c '~/.config/waybar/scripts/mesh.sh menu'",
+    "tooltip-format": "Manage NordVPN",
+    "format": "󰖂",
     "escape": true
   },
   "bluetooth": {
@@ -68,13 +65,8 @@
     "on-click": "sh -c '(nm-connection-editor)' & disown"
   },
   "hyprland/window": {
-    "format": "({})"
+    "format": "({class})"
   },
-  // "custom/launch_fuzzel": {
-  //   "format": "",
-  //   "on-click": "pkill wofi;wofi --location=top_left --height=1050 --width=310 --yoffset=-36 -i -s ~/.config/wofi/wofi.css --show=drun  # Show wofi",
-  //   "tooltip": false
-  // },
   "cpu": {
     "interval": 10,
     "format": "  {usage}%",
@@ -93,22 +85,6 @@
     "interval": 30,
     "format": "HOME 󰋊 {percentage_used}%",
     "path": "/home/mike/",
-    "tooltip": true,
-    "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
-    "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
-  },
-  "disk#3": {
-    "interval": 30,
-    "format": "NAS-DATA 󰋊 {percentage_used}%",
-    "path": "/home/mike/NAS/data",
-    "tooltip": true,
-    "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
-    "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
-  },
-  "disk#4": {
-    "interval": 30,
-    "format": "NAS-BACK 󰋊 {percentage_used}%",
-    "path": "/home/mike/NAS/backup/",
     "tooltip": true,
     "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
     "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
@@ -132,17 +108,10 @@
     "format": "{icon}",
     "all-outputs": false,
     "on-click": "activate",
-    // "persistent-workspaces": {
-    //   "1": [
-    //     "eDP-1"
-    //   ],
-    //   "2": [
-    //     "eDP-1"
-    //   ]
-    // },
     "format-icons": {
-      "1": "",
-      "2": ""
+      "1": "󰣇",
+      "2": "",
+      "3": ""
     },
     "sort-by-number": true
   },
@@ -209,16 +178,6 @@
       ]
     }
   },
-  // "pulseaudio#microphone": {
-  //   "format": "{format_source}",
-  //   "format-source": " {volume}%",
-  //   "format-source-muted": "",
-  //   "on-click": "pamixer --default-source -t",
-  //   "on-click-right": "pavucontrol",
-  //   "on-scroll-up": "pamixer --default-source -i 5",
-  //   "on-scroll-down": "pamixer --default-source -d 5",
-  //   "scroll-step": 5
-  // },
   "temperature": {
     "thermal-zone": 6,
     "format": " {temperatureC}°C",
