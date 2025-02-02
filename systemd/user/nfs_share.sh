@@ -1,20 +1,20 @@
 #!/bin/bash
 
-# SSID target
-TARGET_SSID="Vodafone-MeS"
+# SSID targets
+TARGET_SSIDS=("Vodafone-MeS")
 
 # NFS server and shares
-NFS_SERVER="192.168.1.21"
+NFS_SERVER="192.168.1.20"
 NFS_SHARES=(
     "/share/:/home/mike/NAS/"
-    "/share/data/documenti/:/home/mike/Documenti/"
+    "/share/documenti/:/home/mike/Documenti/"
 )
 
-# Check if connected to the target SSID
+# Check if connected to one of the target SSIDs
 current_ssid=$(iwgetid -r)
 
-if [ "$current_ssid" == "$TARGET_SSID" ]; then
-    echo "Connected to $TARGET_SSID."
+if [[ " ${TARGET_SSIDS[@]} " =~ " ${current_ssid} " ]]; then
+    echo "Connected to $current_ssid."
 
     # Loop through each share
     for share_mapping in "${NFS_SHARES[@]}"; do
@@ -40,6 +40,6 @@ if [ "$current_ssid" == "$TARGET_SSID" ]; then
         fi
     done
 else
-    echo "Not connected to $TARGET_SSID. No action taken."
+    echo "Not connected to any target SSID. No action taken."
 fi
 

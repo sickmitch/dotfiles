@@ -1,8 +1,10 @@
 [Unit]
 Description=borg backup home --> /backup/home
+Type=notify
 
 [Service]
 ExecStart=/home/mike/.config/systemd/user/borg_home_noNFS.sh
+NotifyAccess=all
 
 [Install]
 WantedBy=default.target

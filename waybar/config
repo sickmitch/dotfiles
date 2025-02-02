@@ -23,7 +23,7 @@
     "custom/updates",
     "tray",
     "custom/mesh",
-    "network",
+//    "network",
     "bluetooth",
     "backlight",
     "pulseaudio",
@@ -111,13 +111,14 @@
     "format-icons": {
       "1": "󰣇",
       "2": "",
-      "3": ""
     },
     "sort-by-number": true
   },
   "clock": {
     "format": "{:%I:%M} ",
     "tooltip": true,
+    "locale": "it_IT.UTF-8",
+    "timezone": "Europe/Rome",
     "tooltip-format": "{:%A, %e %B %Y}"
   },
   "backlight": {

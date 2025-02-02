@@ -5,6 +5,10 @@ REPOSITORY=/backup/home/
 BACKUP_PATH=/home/mike/
 ARCHIVE_NAME="home-$(date +%Y-%m-%d_%H:%M)"
 
+# Reset checks
+BACK=0
+PRUNE=0
+
 # Create a list of mounted points under your home directory
 MOUNTED_PATHS=$(findmnt -n -l -o TARGET | grep "^$BACKUP_PATH" || true)
 
@@ -37,6 +41,24 @@ PRUNE_CMD="sudo borg prune \
 
 # Execute the backup
 eval $BACKUP_CMD
+if [ $? -eq 0 ]; then
+    BACK=1
+fi
 
 # Prune repo
 eval $PRUNE_CMD
+if [ $? -eq 0 ]; then
+    PRUNE=1
+fi
+
+if [ $PRUNE -eq 0 ] && [ $BACK -eq 0 ]; then
+    systemd-notify --status="Failed"
+elif [ $PRUNE -eq 1 ] && [ $BACK -eq 0 ]; then
+    systemd-notify --status="Backup Failed"
+elif [ $PRUNE -eq 0 ] && [ $BACK -eq 1 ]; then
+    systemd-notify --status="Prune Failed"
+elif [ $PRUNE -eq 1 ] && [ $BACK -eq 1 ]; then
+    systemd-notify --status="$(date +%H:%M) - Success"
+fi
+
+
