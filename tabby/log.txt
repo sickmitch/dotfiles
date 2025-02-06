@@ -1,0 +1,569 @@
+info: v
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[],"allow-file-access-from-files":true,"allowFileAccessFromFiles":true,"disable-http-cache":true,"disableHttpCache":true,"force_discrete_gpu":0,"lang":"EN","max-active-webgl-contexts":9000,"maxActiveWebglContexts":9000,"sandbox":false},"cwd":"/home/mike","secondInstance":true}
+info: CLI handler matched:
+info: v
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Resizing to 206x45
+debug: Resizing to 206x45
+info: Host key fingerprint:
+info:  ecdsa-sha2-nistp256  R9S8ed718rFvGfNTNgZqEt6DzIJhNZD96HQOsLNY1r8 
+info: Host key verified
+info: Loading private key: /home/mike/.ssh/servers
+debug: Setting language to
+debug: Opening shell
+debug: Shell open
+debug: Closing shell
+info: Destroying
+debug: Closing shell
+info: Destroying
+info: Destroying
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+info: Starting profile bash {"behaviorOnSessionEnd":"auto","color":"","disableDynamicTitle":false,"group":"","icon":"fas fa-terminal","id":"local:binbash","isBuiltin":true,"isTemplate":false,"name":"bash","options":{"args":["-l"],"command":"/bin/bash","cwd":null,"env":{},"height":null,"pauseAfterExit":false,"restoreFromPTYID":null,"runAsAdministrator":false,"width":null},"terminalColorScheme":null,"type":"local","weight":0}
+debug: Resizing to 206x47
+debug: Setting language to
+info: Destroying
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+debug: Resizing to 206x47
+info: Destroying
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+debug: Resizing to 206x47
+debug: Resizing to 100x47
+info: v
+debug: Setting language to
+debug: Resizing to 206x47
+info: Starting profile bash {"behaviorOnSessionEnd":"auto","color":"","disableDynamicTitle":false,"group":"","icon":"fas fa-terminal","id":"local:binbash","isBuiltin":true,"isTemplate":false,"name":"bash","options":{"args":["-l"],"command":"/bin/bash","cwd":null,"env":{},"height":null,"pauseAfterExit":false,"restoreFromPTYID":null,"runAsAdministrator":false,"width":null},"terminalColorScheme":null,"type":"local","weight":0}
+debug: Resizing to 206x47
+info: Destroying
+debug: Setting language to
+info: Starting profile bash {"behaviorOnSessionEnd":"auto","color":"","disableDynamicTitle":false,"group":"","icon":"fas fa-terminal","id":"local:binbash","isBuiltin":true,"isTemplate":false,"name":"bash","options":{"args":["-l"],"command":"/bin/bash","cwd":null,"env":{},"height":null,"pauseAfterExit":false,"restoreFromPTYID":null,"runAsAdministrator":false,"width":null},"terminalColorScheme":null,"type":"local","weight":0}
+debug: Resizing to 206x47
+info: Destroying
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Resizing to 100x47
+debug: Resizing to 100x47
+debug: Resizing to 100x22
+debug: Resizing to 100x22
+info: Destroying
+info: Destroying
+info: Destroying
+info: Starting profile bash {"behaviorOnSessionEnd":"auto","color":"","disableDynamicTitle":false,"group":"","icon":"fas fa-terminal","id":"local:binbash","isBuiltin":true,"isTemplate":false,"name":"bash","options":{"args":["-l"],"command":"/bin/bash","cwd":null,"env":{},"height":null,"pauseAfterExit":false,"restoreFromPTYID":null,"runAsAdministrator":false,"width":null},"terminalColorScheme":null,"type":"local","weight":0}
+debug: Resizing to 206x47
+debug: Resizing to 100x47
+debug: Resizing to 100x47
+debug: Resizing to 65x47
+debug: Resizing to 65x47
+debug: Resizing to 65x47
+info: Destroying
+debug: Resizing to 100x47
+debug: Resizing to 100x47
+debug: Resizing to 65x47
+debug: Resizing to 65x47
+debug: Resizing to 65x47
+debug: Resizing to 65x45
+debug: Resizing to 65x45
+debug: Resizing to 65x45
+debug: Resizing to 65x47
+debug: Resizing to 65x47
+debug: Resizing to 65x47
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+info: Destroying
+debug: Resizing to 100x47
+debug: Resizing to 100x47
+info: Destroying
+debug: Resizing to 206x47
+debug: Resizing to 100x47
+debug: Resizing to 100x47
+debug: Setting language to
+debug: Resizing to 206x45
+info: Destroying
+info: Destroying
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+info: Starting profile bash {"behaviorOnSessionEnd":"auto","color":"","disableDynamicTitle":false,"group":"","icon":"fas fa-terminal","id":"local:binbash","isBuiltin":true,"isTemplate":false,"name":"bash","options":{"args":["-l"],"command":"/bin/bash","cwd":null,"env":{},"height":null,"pauseAfterExit":false,"restoreFromPTYID":null,"runAsAdministrator":false,"width":null},"terminalColorScheme":null,"type":"local","weight":0}
+debug: Resizing to 206x47
+debug: Resizing to 100x47
+debug: Resizing to 100x47
+debug: Resizing to 100x22
+debug: Resizing to 100x22
+debug: Resizing to 112x47
+debug: Resizing to 89x22
+debug: Resizing to 89x22
+debug: Resizing to 125x47
+debug: Resizing to 76x22
+debug: Resizing to 76x22
+debug: Resizing to 113x47
+debug: Resizing to 87x22
+debug: Resizing to 87x22
+debug: Resizing to 88x22
+debug: Resizing to 88x22
+debug: Resizing to 103x47
+debug: Resizing to 98x22
+debug: Resizing to 98x22
+debug: Resizing to 93x47
+debug: Resizing to 108x22
+debug: Resizing to 108x22
+debug: Resizing to 84x47
+debug: Resizing to 117x22
+debug: Resizing to 117x22
+debug: Resizing to 117x25
+debug: Resizing to 117x20
+debug: Resizing to 117x18
+debug: Resizing to 117x27
+debug: Resizing to 117x16
+debug: Resizing to 117x28
+debug: Resizing to 117x18
+debug: Resizing to 117x26
+debug: Resizing to 117x21
+debug: Resizing to 117x24
+debug: Resizing to 117x23
+debug: Resizing to 117x22
+debug: Resizing to 94x47
+debug: Resizing to 107x23
+debug: Resizing to 107x22
+debug: Resizing to 104x47
+debug: Resizing to 96x23
+debug: Resizing to 96x22
+debug: Resizing to 105x47
+debug: Resizing to 117x47
+debug: Resizing to 84x23
+debug: Resizing to 84x22
+debug: Resizing to 106x47
+debug: Resizing to 95x23
+debug: Resizing to 95x22
+debug: Resizing to 96x47
+debug: Resizing to 105x23
+debug: Resizing to 105x22
+debug: Resizing to 107x47
+debug: Resizing to 94x23
+debug: Resizing to 94x22
+debug: Resizing to 119x47
+debug: Resizing to 81x23
+debug: Resizing to 81x22
+debug: Resizing to 108x47
+debug: Resizing to 93x23
+debug: Resizing to 93x22
+debug: Resizing to 98x47
+debug: Resizing to 103x23
+debug: Resizing to 103x22
+debug: Resizing to 107x47
+debug: Resizing to 93x23
+debug: Resizing to 93x22
+debug: Resizing to 115x47
+debug: Resizing to 84x23
+debug: Resizing to 84x22
+debug: Resizing to 123x47
+debug: Resizing to 76x23
+debug: Resizing to 76x22
+debug: Resizing to 123x47
+debug: Resizing to 85x23
+debug: Resizing to 85x22
+debug: Resizing to 116x47
+debug: Resizing to 106x47
+debug: Resizing to 95x23
+debug: Resizing to 95x22
+debug: Resizing to 115x47
+debug: Resizing to 86x23
+debug: Resizing to 86x22
+debug: Resizing to 123x47
+debug: Resizing to 78x23
+debug: Resizing to 78x22
+debug: Resizing to 114x47
+debug: Resizing to 87x23
+debug: Resizing to 87x22
+debug: Resizing to 104x47
+debug: Resizing to 97x23
+debug: Resizing to 97x22
+debug: Resizing to 113x47
+debug: Resizing to 88x23
+debug: Resizing to 88x22
+debug: Resizing to 103x47
+debug: Resizing to 98x23
+debug: Resizing to 98x22
+debug: Resizing to 112x47
+debug: Resizing to 89x23
+debug: Resizing to 89x22
+debug: Resizing to 120x47
+debug: Resizing to 80x23
+debug: Resizing to 80x22
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Resizing to 79x47
+debug: Resizing to 52x23
+debug: Resizing to 52x22
+debug: Resizing to 65x47
+debug: Setting language to
+debug: Setting language to
+debug: Resizing to 182x42
+debug: Resizing to 185x42
+debug: Resizing to 65x47
+debug: Resizing to 88x47
+debug: Resizing to 58x23
+debug: Resizing to 58x22
+debug: Resizing to 50x47
+debug: Resizing to 98x47
+debug: Resizing to 65x23
+debug: Resizing to 65x22
+debug: Resizing to 32x47
+debug: Resizing to 89x47
+debug: Resizing to 59x23
+debug: Resizing to 59x22
+debug: Resizing to 48x47
+debug: Resizing to 80x47
+debug: Resizing to 53x23
+debug: Resizing to 53x22
+debug: Resizing to 62x47
+debug: Resizing to 73x47
+debug: Resizing to 48x23
+debug: Resizing to 48x22
+debug: Resizing to 75x47
+info: Destroying
+debug: Resizing to 78x23
+debug: Resizing to 78x22
+debug: Resizing to 122x47
+info: Destroying
+debug: Resizing to 206x23
+debug: Resizing to 206x22
+info: Destroying
+debug: Resizing to 206x46
+debug: Resizing to 206x47
+debug: Resizing to 206x22
+debug: Resizing to 206x22
+debug: Resizing to 206x14
+debug: Resizing to 206x14
+debug: Resizing to 206x14
+info: Destroying
+debug: Resizing to 206x22
+debug: Resizing to 206x22
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+info: Destroying
+debug: Resizing to 206x20
+info: Host key fingerprint:
+info:  ecdsa-sha2-nistp256  IDIvQI99wfnZUU7jCZZpO29ZC80mD0kflN7tFNjqj+w 
+info: Host key verified
+info: Loading private key: /home/mike/.ssh/servers
+debug: Setting language to
+debug: Opening shell
+debug: Shell open
+debug: Setting language to
+debug: Setting language to
+debug: Resizing to 206x21
+debug: Resizing to 206x22
+debug: Setting language to
+debug: Setting language to
+debug: Setting language to
+debug: Resizing to 206x21
+debug: Resizing to 206x22
+debug: Setting language to
+debug: Setting language to
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+debug: Resizing to 206x20
+debug: Resizing to 206x21
+info: Host key fingerprint:
+info:  ecdsa-sha2-nistp256  IDIvQI99wfnZUU7jCZZpO29ZC80mD0kflN7tFNjqj+w 
+info: Host key verified
+info: Loading private key: /home/mike/.ssh/servers
+debug: Opening shell
+debug: Resizing to 206x22
+debug: Shell open
+debug: Resizing to 206x25
+debug: Resizing to 206x18
+debug: Resizing to 206x21
+debug: Resizing to 206x22
+debug: Closing shell
+info: Destroying
+debug: Closing shell
+info: Destroying
+info: Destroying
+debug: Resizing to 206x46
+debug: Resizing to 206x47
+debug: Resizing to 206x45
+debug: Resizing to 206x47
+debug: Setting language to
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[],"allow-file-access-from-files":true,"allowFileAccessFromFiles":true,"disable-gpu":true,"disable-http-cache":true,"disableGpu":true,"disableHttpCache":true,"force_discrete_gpu":0,"lang":"EN","max-active-webgl-contexts":9000,"maxActiveWebglContexts":9000,"sandbox":false},"cwd":"/home/mike","secondInstance":true}
+info: CLI handler matched:
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[],"allow-file-access-from-files":true,"allowFileAccessFromFiles":true,"disable-gpu":true,"disable-http-cache":true,"disableGpu":true,"disableHttpCache":true,"force_discrete_gpu":0,"lang":"EN","max-active-webgl-contexts":9000,"maxActiveWebglContexts":9000,"sandbox":false},"cwd":"/home/mike","secondInstance":true}
+info: CLI handler matched:
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":["run"],"allow-file-access-from-files":true,"allowFileAccessFromFiles":true,"command":["neofetch"],"disable-gpu":true,"disable-http-cache":true,"disableGpu":true,"disableHttpCache":true,"force_discrete_gpu":0,"lang":"EN","max-active-webgl-contexts":9000,"maxActiveWebglContexts":9000,"sandbox":false},"cwd":"/home/mike","secondInstance":true}
+info: Starting profile  {"behaviorOnSessionEnd":"auto","color":"","disableDynamicTitle":false,"group":"","icon":"","id":"","isBuiltin":false,"isTemplate":false,"name":"","options":{"args":[],"command":"neofetch","cwd":null,"env":{},"height":null,"pauseAfterExit":false,"restoreFromPTYID":null,"runAsAdministrator":false,"width":null},"terminalColorScheme":null,"type":"local","weight":0}
+info: CLI handler matched:
+debug: Resizing to 206x47
+info: Destroying
+info: CLI arguments received: {"argv":{"$0":"tabby","_":["run"],"allow-file-access-from-files":true,"allowFileAccessFromFiles":true,"command":["fastfetch ; /usr/bin/bash"],"disable-gpu":true,"disable-http-cache":true,"disableGpu":true,"disableHttpCache":true,"force_discrete_gpu":0,"lang":"EN","max-active-webgl-contexts":9000,"maxActiveWebglContexts":9000,"sandbox":false},"cwd":"/home/mike","secondInstance":true}
+info: Starting profile  {"behaviorOnSessionEnd":"auto","color":"","disableDynamicTitle":false,"group":"","icon":"","id":"","isBuiltin":false,"isTemplate":false,"name":"","options":{"args":[],"command":"fastfetch ; /usr/bin/bash","cwd":null,"env":{},"height":null,"pauseAfterExit":false,"restoreFromPTYID":null,"runAsAdministrator":false,"width":null},"terminalColorScheme":null,"type":"local","weight":0}
+info: CLI handler matched:
+debug: Resizing to 206x47
+info: Destroying
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+debug: Resizing to 206x47
+info: Destroying
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+debug: Resizing to 206x47
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+debug: Resizing to 206x45
+info: CLI handler matched:
+debug: Resizing to 206x47
+info: Destroying
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+debug: Resizing to 206x47
+info: Destroying
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+debug: Resizing to 206x47
+info: Destroying
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+debug: Resizing to 206x47
+info: Destroying
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+info: Starting profile bash {"behaviorOnSessionEnd":"auto","color":"","disableDynamicTitle":false,"group":"","icon":"fas fa-terminal","id":"local:binbash","isBuiltin":true,"isTemplate":false,"name":"bash","options":{"args":["-l"],"command":"/bin/bash","cwd":null,"env":{},"height":null,"pauseAfterExit":false,"restoreFromPTYID":null,"runAsAdministrator":false,"width":null},"terminalColorScheme":null,"type":"local","weight":0}
+debug: Resizing to 206x47
+info: Destroying
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+debug: Resizing to 206x47
+info: Destroying
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+debug: Resizing to 206x47
+info: Destroying
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+info: Starting profile bash {"behaviorOnSessionEnd":"auto","color":"","disableDynamicTitle":false,"group":"","icon":"fas fa-terminal","id":"local:binbash","isBuiltin":true,"isTemplate":false,"name":"bash","options":{"args":["-l"],"command":"/bin/bash","cwd":null,"env":{},"height":null,"pauseAfterExit":false,"restoreFromPTYID":null,"runAsAdministrator":false,"width":null},"terminalColorScheme":null,"type":"local","weight":0}
+debug: Resizing to 206x47
+info: Destroying
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+debug: Resizing to 206x47
+info: Destroying
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+debug: Resizing to 206x47
+info: Destroying
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+debug: Resizing to 206x47
+info: Destroying
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+debug: Resizing to 206x47
+info: Destroying
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+debug: Resizing to 206x47
+info: Destroying
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+debug: Resizing to 206x47
+info: Destroying
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+debug: Resizing to 206x47
+info: Destroying
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+info: Starting profile bash {"behaviorOnSessionEnd":"auto","color":"","disableDynamicTitle":false,"group":"","icon":"fas fa-terminal","id":"local:binbash","isBuiltin":true,"isTemplate":false,"name":"bash","options":{"args":["-l"],"command":"/bin/bash","cwd":null,"env":{},"height":null,"pauseAfterExit":false,"restoreFromPTYID":null,"runAsAdministrator":false,"width":null},"terminalColorScheme":null,"type":"local","weight":0}
+debug: Resizing to 206x47
+debug: Resizing to 206x45
+debug: Resizing to 206x47
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+debug: Resizing to 206x45
+info: CLI handler matched:
+debug: Resizing to 206x47
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+debug: Resizing to 206x45
+info: CLI handler matched:
+info: v
+debug: Setting language to
+info: CLI arguments received: {"argv":{"$0":"tabby","_":[]},"cwd":"/home/mike","secondInstance":false}
+info: CLI handler matched:
+debug: Resizing to 206x47
+info: Destroying
+info: v

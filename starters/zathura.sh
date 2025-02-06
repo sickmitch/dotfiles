@@ -29,7 +29,7 @@ combined_list=$(echo -e "Recents\n$pdf_folders")
 # Use wofi to show the folders and store selection
 selected_folder=$(echo "$combined_list" | wofi \
     --location=center \
-    --height=800 \
+    --height=400 \
     --width=800 \
     -i \
     -s ~/.config/wofi/wofi.css \
@@ -42,7 +42,7 @@ if [ -n "$selected_folder" ]; then
         # Show recent files as if they are in a folder
         selected_pdf=$(echo "$recent_files" | wofi \
             --location=center \
-            --height=800 \
+            --height=400 \
             --width=800 \
             -i \
             -s ~/.config/wofi/wofi.css \

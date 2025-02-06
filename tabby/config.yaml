@@ -1,0 +1,460 @@
+version: 7
+profiles:
+  - name: HPE
+    type: ssh
+    group: f9c9c1c8-cd19-434f-aa11-ddaabacaeacb
+    options:
+      host: 192.168.1.5
+      user: mike
+      privateKeys:
+        - /home/mike/.ssh/servers
+      algorithms: {}
+      input: {}
+    icon: fas fa-server
+    color: '#711921'
+    id: ssh:custom:HPE-(.sshconfig):7c35a383-d274-43ca-8b95-25596b024c25
+  - name: ILO
+    type: ssh
+    group: f9c9c1c8-cd19-434f-aa11-ddaabacaeacb
+    options:
+      host: 192.168.1.90
+      user: mike
+      algorithms:
+        hmac:
+          - hmac-sha1
+          - hmac-sha1-etm@openssh.com
+          - hmac-sha2-256
+          - hmac-sha2-256-etm@openssh.com
+          - hmac-sha2-512
+          - hmac-sha2-512-etm@openssh.com
+        kex:
+          - curve25519-sha256
+          - curve25519-sha256@libssh.org
+          - diffie-hellman-group14-sha256
+          - diffie-hellman-group16-sha512
+          - ext-info-c
+          - ext-info-s
+          - kex-strict-c-v00@openssh.com
+          - kex-strict-s-v00@openssh.com
+        cipher:
+          - aes128-ctr
+          - aes192-ctr
+          - aes256-ctr
+          - aes256-gcm@openssh.com
+          - chacha20-poly1305@openssh.com
+        serverHostKey:
+          - ecdsa-sha2-nistp256
+          - ecdsa-sha2-nistp521
+          - rsa-sha2-256
+          - rsa-sha2-512
+          - ssh-ed25519
+          - ssh-rsa
+      input: {}
+      privateKeys: []
+      forwardedPorts: []
+      scripts: []
+    color: '#711921'
+    icon: fas fa-server
+    id: ssh:custom:ILO:e04e9ef8-576f-4e20-8426-60455e71a4b3
+  - name: OPTI
+    type: ssh
+    group: f9c9c1c8-cd19-434f-aa11-ddaabacaeacb
+    options:
+      host: 192.168.1.6
+      user: mike
+      privateKeys:
+        - /home/mike/.ssh/servers
+      algorithms: {}
+      input: {}
+    icon: fas fa-server
+    color: '#711921'
+    id: ssh:custom:OPTI-(.sshconfig):f09d0db4-e744-4700-a0e9-c6ce6245f221
+  - type: ssh
+    group: f9c9c1c8-cd19-434f-aa11-ddaabacaeacb
+    options:
+      host: 192.168.1.7
+      user: mike
+      privateKeys:
+        - /home/mike/.ssh/servers
+      algorithms: {}
+      input: {}
+    name: ZIMA
+    icon: fas fa-server
+    color: '#711921'
+    id: ssh:custom:ZIMA:0b951bf0-c81a-4ff5-afb3-42bd5d822bd4
+  - name: DOCKER
+    type: ssh
+    group: e7af2908-dd7f-4895-b00c-ff6a9035d0d8
+    options:
+      host: 192.168.1.30
+      user: mike
+      privateKeys:
+        - /home/mike/.ssh/servers
+      algorithms:
+        hmac:
+          - hmac-sha1
+          - hmac-sha1-etm@openssh.com
+          - hmac-sha2-256
+          - hmac-sha2-256-etm@openssh.com
+          - hmac-sha2-512
+          - hmac-sha2-512-etm@openssh.com
+        kex:
+          - curve25519-sha256
+          - curve25519-sha256@libssh.org
+          - diffie-hellman-group14-sha256
+          - diffie-hellman-group16-sha512
+          - ext-info-c
+          - ext-info-s
+          - kex-strict-c-v00@openssh.com
+          - kex-strict-s-v00@openssh.com
+        cipher:
+          - aes128-ctr
+          - aes192-ctr
+          - aes256-ctr
+          - aes256-gcm@openssh.com
+          - chacha20-poly1305@openssh.com
+        serverHostKey:
+          - ecdsa-sha2-nistp256
+          - ecdsa-sha2-nistp521
+          - rsa-sha2-256
+          - rsa-sha2-512
+          - ssh-ed25519
+          - ssh-rsa
+      input: {}
+      forwardedPorts: []
+      scripts: []
+    icon: fas fa-cloud
+    color: '#efa94a'
+    id: ssh:custom:DOCKER:8f77b5b1-b2ba-4ec5-945f-e4be10afe4ae
+  - name: DOCKER-TEST
+    type: ssh
+    group: e7af2908-dd7f-4895-b00c-ff6a9035d0d8
+    options:
+      host: 192.168.1.32
+      user: mike
+      privateKeys:
+        - /home/mike/.ssh/servers
+      algorithms: {}
+      input: {}
+    icon: fas fa-cloud
+    color: '#efa42a'
+    id: ssh:custom:DOCKER-TEST:ff4c459e-d1d3-455d-9a9c-045adc3a13ea
+  - name: MEDIARR
+    type: ssh
+    group: e7af2908-dd7f-4895-b00c-ff6a9035d0d8
+    options:
+      host: 192.168.1.31
+      user: mike
+      privateKeys:
+        - /home/mike/.ssh/servers
+      algorithms: {}
+      input: {}
+    icon: fas fa-cloud-arrow-down
+    color: '#efa94a'
+    id: ssh:custom:MEDIARR:d91a5d94-db6c-4890-8ae7-40050d446b86
+  - name: 'NAS-BACK '
+    type: ssh
+    group: e7af2908-dd7f-4895-b00c-ff6a9035d0d8
+    options:
+      host: 192.168.1.21
+      user: mike
+      privateKeys:
+        - /home/mike/.ssh/servers
+      algorithms: {}
+      input: {}
+    icon: fas fa-box-open
+    color: '#efa94a'
+    id: ssh:custom:NAS-BACK:d0df9e50-544f-4ca8-95dd-10bbce8ac053
+  - name: 'NAS-DATA '
+    type: ssh
+    group: e7af2908-dd7f-4895-b00c-ff6a9035d0d8
+    options:
+      host: 192.168.1.20
+      user: mike
+      privateKeys:
+        - /home/mike/.ssh/servers
+      algorithms: {}
+      input: {}
+    icon: fas fa-box-open
+    color: '#efa94a'
+    id: ssh:custom:NAS-DATA:bfb36eec-7a4d-4e27-a162-7bdbd9831992
+  - name: 'PBS '
+    type: ssh
+    group: e7af2908-dd7f-4895-b00c-ff6a9035d0d8
+    options:
+      host: 192.168.1.8
+      user: mike
+      privateKeys:
+        - /home/mike/.ssh/servers
+      algorithms: {}
+      input: {}
+    icon: fas fa-server
+    color: '#efa94a'
+    id: ssh:custom:PBS:27119929-0979-4bd9-805b-b035e7462f02
+  - name: 'PIHOLE '
+    type: ssh
+    group: e7af2908-dd7f-4895-b00c-ff6a9035d0d8
+    options:
+      host: 192.168.1.22
+      user: mike
+      privateKeys:
+        - /home/mike/.ssh/servers
+      algorithms: {}
+      input: {}
+    icon: fas fa-server
+    color: '#efa94a'
+    id: ssh:custom:PIHOLE:9b5f6af0-1e35-4b5d-a773-1678aa98af29
+groups:
+  - id: f9c9c1c8-cd19-434f-aa11-ddaabacaeacb
+    name: A
+  - id: e7af2908-dd7f-4895-b00c-ff6a9035d0d8
+    name: B
+    defaults:
+      ssh:
+        type: ssh
+        options:
+          algorithms: {}
+          input: {}
+        color: '#efa94a'
+        disableDynamicTitle: false
+configSync:
+  parts: {}
+hotkeys:
+  toggle-window: []
+  copy-current-path: []
+  ctrl-c:
+    - Ctrl-C
+  copy:
+    - Ctrl-Shift-C
+  paste:
+    - Ctrl-Shift-V
+    - Shift-Insert
+  select-all:
+    - Ctrl-Shift-A
+  clear: []
+  zoom-in:
+    - Ctrl-=
+    - Ctrl-Shift-=
+  zoom-out:
+    - Ctrl--
+    - Ctrl-Shift--
+  reset-zoom:
+    - Ctrl-0
+  home:
+    - Home
+  end:
+    - End
+  previous-word:
+    - Ctrl-Left
+  next-word:
+    - Ctrl-Right
+  delete-previous-word:
+    - Ctrl-Backspace
+  delete-line:
+    - Ctrl-Shift-Backspace
+  delete-next-word:
+    - Ctrl-Delete
+  search:
+    - Ctrl-Shift-F
+  pane-focus-all:
+    - Ctrl-Shift-I
+  focus-all-tabs:
+    - Ctrl-Alt-Shift-I
+  scroll-to-top:
+    - Ctrl-PageUp
+  scroll-up:
+    - Alt-PageUp
+  scroll-down:
+    - Alt-PageDown
+  scroll-to-bottom:
+    - Ctrl-PageDown
+  restart-telnet-session: []
+  restart-ssh-session: []
+  launch-winscp: []
+  settings-tab: {}
+  settings:
+    - Ctrl-,
+  serial: []
+  restart-serial-session: []
+  new-tab:
+    - Ctrl-W
+  new-window:
+    - Ctrl-Shift-N
+  profile: {}
+  profile-selectors:
+    ssh:
+      - - Ctrl-O
+        - Ctrl-O
+    split-layout: []
+  group-selectors:
+    f9c9c1c8-cd19-434f-aa11-ddaabacaeacb: []
+    e7af2908-dd7f-4895-b00c-ff6a9035d0d8: []
+  toggle-fullscreen:
+    - F11
+  close-tab: []
+  reopen-tab: []
+  toggle-last-tab: []
+  rename-tab: []
+  next-tab:
+    - Ctrl-Tab
+  previous-tab:
+    - Ctrl-Shift-Tab
+  move-tab-left:
+    - Ctrl-Shift-H
+  move-tab-right:
+    - Ctrl-Shift-L
+  rearrange-panes: []
+  duplicate-tab: []
+  restart-tab: []
+  reconnect-tab: []
+  disconnect-tab: []
+  explode-tab:
+    - Ctrl-E
+  combine-tabs: []
+  tab-1:
+    - Alt-1
+  tab-2:
+    - Alt-2
+  tab-3:
+    - Alt-3
+  tab-4:
+    - Alt-4
+  tab-5:
+    - Alt-5
+  tab-6:
+    - Alt-6
+  tab-7:
+    - Alt-7
+  tab-8:
+    - Alt-8
+  tab-9:
+    - Alt-9
+  tab-10:
+    - Alt-0
+  tab-11: []
+  tab-12: []
+  tab-13: []
+  tab-14: []
+  tab-15: []
+  tab-16: []
+  tab-17: []
+  tab-18: []
+  tab-19: []
+  tab-20: []
+  split-right:
+    - Alt-L
+  split-bottom:
+    - Alt-J
+  split-left:
+    - Alt-H
+  split-top:
+    - Alt-K
+  pane-nav-right:
+    - - Ctrl-A
+      - Right
+  pane-nav-down:
+    - - Ctrl-A
+      - Down
+  pane-nav-up:
+    - - Ctrl-A
+      - Up
+  pane-nav-left:
+    - - Ctrl-A
+      - Left
+  pane-nav-previous:
+    - - Ctrl-A
+      - Shift-Tab
+  pane-nav-next:
+    - - Ctrl-A
+      - Tab
+  pane-nav-1: []
+  pane-nav-2: []
+  pane-nav-3: []
+  pane-nav-4: []
+  pane-nav-5: []
+  pane-nav-6: []
+  pane-nav-7: []
+  pane-nav-8: []
+  pane-nav-9: []
+  pane-maximize:
+    - - Ctrl-A
+      - Z
+  pane-increase-horizontal:
+    - Alt-Right
+  pane-decrease-horizontal:
+    - Alt-Left
+  switch-profile:
+    - - Ctrl-A
+      - O
+  profile-selector:
+    - Ctrl-Shift-E
+  command-selector:
+    - Ctrl-Shift-P
+  close-pane:
+    - Alt-Q
+  pane-increase-vertical:
+    - Alt-Up
+  pane-decrease-vertical:
+    - Alt-Down
+terminal:
+  searchOptions: {}
+  colorScheme:
+    name: Tabby Default
+    foreground: '#cdd6f4'
+    background: '#1e1e2e'
+    cursor: '#f5e0dc'
+    colors:
+      - '#45475a'
+      - '#f38ba8'
+      - '#a6e3a1'
+      - '#f9e2af'
+      - '#89b4fa'
+      - '#f5c2e7'
+      - '#94e2d5'
+      - '#bac2de'
+      - '#585b70'
+      - '#f38ba8'
+      - '#a6e3a1'
+      - '#f9e2af'
+      - '#89b4fa'
+      - '#f5c2e7'
+      - '#94e2d5'
+      - '#a6adc8'
+  ligatures: true
+  font: JetBrainsMono Nerd Font Mono
+  fontWeight: 300
+  fontWeightBold: 500
+  fontSize: 16
+  frontend: xterm
+  copyOnSelect: true
+  bell: visual
+  profile: local:binbash
+  customColorSchemes: []
+  showBuiltinProfiles: false
+  warnOnMultilinePaste: false
+ssh:
+  knownHosts:
+    - host: 192.168.1.5
+      port: 22
+      type: ecdsa-sha2-nistp256
+      digest: R9S8ed718rFvGfNTNgZqEt6DzIJhNZD96HQOsLNY1r8=
+    - host: 192.168.1.30
+      port: 22
+      type: ecdsa-sha2-nistp256
+      digest: IDIvQI99wfnZUU7jCZZpO29ZC80mD0kflN7tFNjqj+w=
+clickableLinks: {}
+accessibility: {}
+appearance: {}
+hacks:
+  disableGPU: true
+providerBlacklist: []
+commandBlacklist: []
+enableAnalytics: false
+language: it-IT
+enableWelcomeTab: false
+pluginBlacklist: []
+profileDefaults:
+  ssh:
+    disableDynamicTitle: true
+    type: ssh
+profileBlacklist: []
