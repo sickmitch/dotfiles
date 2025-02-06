@@ -3,7 +3,7 @@ version = 3
 final_space = true
 
 [secondary_prompt]
-  template = '❯❯ '
+  template = '❯ '
   foreground = 'magenta'
   background = 'transparent'
 
@@ -56,11 +56,10 @@ final_space = true
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
-  newline = true
 
   [[blocks.segments]]
     style = 'plain'
-    template = '❯'
+    template = '  ❯'
     background = 'transparent'
     type = 'text'
     foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}magenta{{end}}']
