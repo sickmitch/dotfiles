@@ -31,11 +31,11 @@ if [[ " ${TARGET_SSIDS[@]} " =~ " ${current_ssid} " ]]; then
         else
             # Mount the NFS share
             sudo mount -t nfs "$NFS_SERVER:$share" "$mount_point"
-            
             if [ $? -eq 0 ]; then
                 echo "NFS share $share mounted successfully at $mount_point"
             else
                 echo "Failed to mount NFS share $share at $mount_point"
+                DISPLAY=:0 /usr/bin/notify-send -u critical "Failed to mount NAS" #notify
             fi
         fi
     done
