@@ -29,11 +29,18 @@ with_argument = true
 url_encode = false
 
 [[modules]]
+description = "launch commands from the system"
+prefix = "\u001B[32mcmd\u001B[0m"
+cmd = "kitty --hold -e bash -c '{}'"
+with_argument = true
+url_encode = false
+
+[[modules]]
 description = "search for arch packages"
 prefix = "\u001B[32mpac\u001B[0m"
 cmd = "xdg-open https://archlinux.org/packages/?q='{}'"
-with_argument = true # If "with_argument" is true, the {} in the cmd value will be replaced with user input. For example, entering "sh yazi ~/downloads" will open yazi and enter the download folder when "with_argument" is true; but will not enter ~/downloads when "with_arguement" is false.
-url_encode = true # The url_encode option should be set true when the module is set to call for webpages, as it will make sure special characters in the url being readable to web browsers. It will better be false when the module calls a shell script.
+with_argument = true 
+url_encode = true 
 
 [[modules]]
 description = "search archwiki"

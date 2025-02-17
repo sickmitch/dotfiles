@@ -1,0 +1,9 @@
+[Unit]
+Description=docs synching
+ConditionPathExists=/home/mike/NAS/documenti/
+
+[Service]
+ExecStart=/home/mike/.config/systemd/user/doc_sync.sh
+
+[Install]
+WantedBy=default.target

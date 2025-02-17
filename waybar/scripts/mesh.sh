@@ -2,7 +2,7 @@
 
 if [ "$1" = "menu" ]; then
     # Define menu options
-    choice=$(echo -e "Mesh Connect\nConnect\nDisconnect\nStatus" | wofi --location=top_right --height=260 --width=200 --yoffset=10 --xoffset=-40 --dmenu -i -s ~/.config/wofi/wofi.css --prompt="VPN Manage")
+    choice=$(echo -e "Mesh Connect\nConnect\nDisconnect\nStatus" | wofi --height=200 --width=200 --x=-50 --y=10 --location=top_right --dmenu -i -s ~/.config/wofi/wofi.css --prompt="VPN Manage")
     
     case $choice in
         "Mesh Connect")
@@ -22,25 +22,26 @@ else
     # Handle the actual parameters
     case $1 in
         "mconnect")
-            sudo systemctl start nordvpnd && sleep 2 && nordvpn mesh peer connect hpe && sudo ip r a 192.168.1.0/24 via 100.117.63.130
+            sudo systemctl start nordvpnd && sleep 10 && nordvpn mesh peer connect dl360 && sudo ip r a 192.168.1.0/24 via 100.99.82.46
+            systemctl --user restart nfs_share
             ;;
         "connect")
-            sudo systemctl start nordvpnd && sleep 2 && nordvpn connect
+            sudo systemctl start nordvpnd && sleep 10 && nordvpn connect
             ;;
         "disconnect")
             if [ "$2" = "mesh" ]; then
                 sudo ip r d 192.168.1.0/24
             fi
-            nordvpn disconnect && sudo systemctl stop nordvpnd
+            sudo umount ~/NAS && nordvpn disconnect && sudo systemctl stop nordvpnd
             ;;
         "status")
-            mesh_connected=$(ip route show | grep -c "192.168.1.0/24 via 100.117.63.130")
+            mesh_connected=$(ip route show | grep -c "192.168.1.0/24 via 100.99.82.46")
             vpn_connected=$(nordvpn status | grep -c "Connected")
             
             if [ "$mesh_connected" -eq 1 ]; then
-                notify-send "Mesh Status" "Connected to HPE network"
+                notify-send "Status" "Connected to HOME network"
             elif [ "$vpn_connected" -eq 1 ]; then
-                notify-send "VPN Status" "Connected to VPN"
+                notify-send "Status" "Connected to VPN"
             else
                 notify-send "Status" "Not connected to VPN"
             fi

@@ -6,7 +6,7 @@ Wants=network-online.target
 
 [Service]
 Type=oneshot
-ExecStartPre=/bin/sh -c 'until ping -c1 1.1.1.1 2>/dev/null; do sleep 1; done;'
+ExecStartPre=/bin/sh -c 'timeout 60 sh -c "until ping -c1 1.1.1.1 2>/dev/null; do sleep 1; done;"'
 ExecStart=/home/mike/.config/systemd/user/nfs_share.sh
 
 [Install]

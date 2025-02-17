@@ -7,14 +7,14 @@ TARGET_SSIDS=("Vodafone-MeS")
 NFS_SERVER="192.168.1.20"
 NFS_SHARES=(
     "/share/:/home/mike/NAS/"
-    "/share/documenti/:/home/mike/Documenti/"
 )
 
-# Check if connected to one of the target SSIDs
+# Check if connected to one of the target SSIDs or to NordVPN server dl360
 current_ssid=$(iwgetid -r)
+nordvpn_status=$(nordvpn status | sed -n 's/.*Server: \(.*\)/\1/p')
 
-if [[ " ${TARGET_SSIDS[@]} " =~ " ${current_ssid} " ]]; then
-    echo "Connected to $current_ssid."
+if [[ " ${TARGET_SSIDS[@]} " =~ " ${current_ssid} " ]] || [[ "$nordvpn_status" == "dl360" ]]; then
+    echo "Connected to Home or NordVPN server dl360."
 
     # Loop through each share
     for share_mapping in "${NFS_SHARES[@]}"; do
@@ -40,6 +40,7 @@ if [[ " ${TARGET_SSIDS[@]} " =~ " ${current_ssid} " ]]; then
         fi
     done
 else
-    echo "Not connected to any target SSID. No action taken."
+    echo "Not connected to any target SSID or NordVPN server dl360. No action taken."
+    DISPLAY=:0 /usr/bin/notify-send -u critical "NAS not avaible" #notify
 fi
 
