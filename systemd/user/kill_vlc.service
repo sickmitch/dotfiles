@@ -1,0 +1,10 @@
+[Unit]
+Description=Monitor Bluetooth device and kill VLC on disconnect
+After=bluetooth.service
+
+[Service]
+ExecStart=/home/mike/.config/systemd/user/kill_vlc.sh
+Restart=always
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=Bluetooth Auto Script
+After=bluetooth.service
+Wants=bluetooth.service
+
+[Service]
+ExecStart=/bin/bash /home/mike/.config/systemd/user/auto_bt_low-fi.sh
+Restart=always
+
+[Install]
+WantedBy=default.target

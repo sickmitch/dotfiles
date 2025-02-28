@@ -1,6 +1,5 @@
 [Unit]
 Description=Timer to check battery status
-ConditionPathExists=/home/mike/NAS/documenti
 
 [Timer]
 OnActiveSec=1min
