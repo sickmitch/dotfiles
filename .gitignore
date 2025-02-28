@@ -1,7 +1,11 @@
+systemd/user/multi-user.target.wants/
+.vscode/
+abiword/
+clangd/
+scribus/
 warp-terminal/user_preferences.json
 assets/
 feishin/
-warp-terminal/
 nctasks/
 configstore/update-notifier-npm.json
 hypr/hyprland.conf-bak
@@ -80,7 +84,6 @@ protonvpn/
 /systemd/user/default.target.wants
 /systemd/user/timers.target.wants
 systemd/user/sockets.target.wants
-systemd/user/protonvpn_reconnect.service
 /Thunar
 /xfce4
 /nwg-look
