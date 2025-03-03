@@ -45,13 +45,9 @@ tooltip label{
     background: #11111b;
     color: #fdfd96;
 }
-#custom-sonixd,
-#mpris,
-#custom-power_btn,
 #window,
 #cpu,
 #disk,
-#custom-updates,
 #memory,
 #clock,
 #battery,
@@ -60,16 +56,20 @@ tooltip label{
 #temperature,
 #workspaces,
 #bluetooth,
-#custom-media,
-#backlight {
-    padding: 0px 10px;
-    margin: 2px 0px;
+#backlight,
+#cpu,
+#window,
+#network,
+#custom-updates {
+    margin-right: 16px;
 }
-#custom-mesh,
-#network {
-    padding: 0px 15px;
-    margin: 2px 0px;
+#custom-mesh{
+    margin-right: 22px;
 }
+#custom-radiobt {
+    margin-right: 25px;
+}
+/* #custom-media, */
 #battery.warning{
   color: #fdfd96
 }
@@ -77,15 +77,7 @@ tooltip label{
   color: #ff6961;
 }
 #battery {
-    border-radius: 0px 5px 5px 0px;
-    margin-right: 0px;
     color: #02C39A;
-}
-#cpu,#window {
-  padding-right:10px;
-}
-#custom-media {
-    padding-left: 20px;
 }
 #temperature.critical {
     color: #e92d4d;

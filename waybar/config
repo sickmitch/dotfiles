@@ -1,8 +1,6 @@
 {
   "layer": "top",
   "position": "top",
-  // "mod": "dock",
-  // "exclusive": true,
   "height": 31,
   "margin-top": 5,
   "margin-left": 10,
@@ -12,18 +10,17 @@
     "cpu",
     "memory",
     "disk",
-    "disk#2"
+    "disk#2",
+    "custom/media"
   ],
   "modules-center": [
     "hyprland/workspaces"
-//    "hyprland/window"
-   ],
+  ],
   "modules-right": [
-    "custom/media",
     "custom/updates",
     "tray",
     "custom/mesh",
-//    "network",
+    "custom/radiobt",
     "bluetooth",
     "backlight",
     "pulseaudio",
@@ -42,10 +39,16 @@
     "on-click": "playerctl play-pause",
     "escape": true
   },
+  "custom/radiobt": {
+    "on-click": "sh -c ~/.config/waybar/scripts/radiobt.sh",
+    "tooltip-format": "Radio on Bluetooth connection (Toggle)",
+    "format": "{} ",
+    "escape": true
+  },
   "custom/mesh": {
     "on-click": "sh -c '~/.config/waybar/scripts/mesh.sh menu'",
     "tooltip-format": "Manage NordVPN",
-    "format": "󰖂",
+    "format": "{} 󰖂",
     "escape": true
   },
   "bluetooth": {
@@ -110,7 +113,7 @@
     "on-click": "activate",
     "format-icons": {
       "1": "󰣇",
-      "2": "",
+      "2": ""
     },
     "sort-by-number": true
   },

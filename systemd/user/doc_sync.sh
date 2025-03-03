@@ -16,7 +16,6 @@ rclone bisync "$SRC" "$DEST" \
     --no-update-modtime \
     --no-update-dir-modtime \
     --check-sync=false \
-    --resync \
     --verbose
 
 # Check if rclone bisync command was successful
