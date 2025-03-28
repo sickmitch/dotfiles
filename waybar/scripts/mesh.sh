@@ -23,7 +23,10 @@ else
     case $1 in
         "mconnect")
             sudo systemctl start nordvpnd && sleep 10 && nordvpn mesh peer connect dl360 && sudo ip r a 192.168.1.0/24 via 100.99.82.46
-            systemctl --user restart nfs_share
+            systemctl --user restart nfs_share && sleep 5
+            if [ -d /home/mike/NAS/documenti/ ]; then
+              notify-send -u critical "Status" "NAS is available"
+            fi
             ;;
         "connect")
             sudo systemctl start nordvpnd && sleep 10 && nordvpn connect

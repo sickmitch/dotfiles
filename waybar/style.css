@@ -69,7 +69,15 @@ tooltip label{
 #custom-radiobt {
     margin-right: 25px;
 }
-/* #custom-media, */
+#workspaces {
+    padding-left: 5px;
+}
+#window {
+    margin-right: 20px;
+}
+#cpu {
+    margin-left: 16px;
+}
 #battery.warning{
   color: #fdfd96
 }
@@ -81,12 +89,6 @@ tooltip label{
 }
 #temperature.critical {
     color: #e92d4d;
-}
-#workspaces {
-    padding-left: 5px;
-}
-#window {
-    margin-right: 20px;
 }
 #custom-updates {
   color: #fdfd96;

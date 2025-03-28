@@ -1,6 +1,7 @@
 ![image](https://i.imgur.com/FpZ3QQ7.png)
 
 
+
 # HyprDotfiles
 
 If you used the [set_hypr](https://github.com/sickmitch/set_hyprland/blob/master/set_hypr.sh) scripts without changes to the rice software section importing those dotfiles will be smoothly working.
