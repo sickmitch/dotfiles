@@ -1,3 +1,5 @@
+nctasks_gtk/
+nctasks_gtk_old/
 Code - OSS/
 systemd/user/multi-user.target.wants/
 .vscode/
@@ -17,6 +19,9 @@ systemd/user/git-maintenance@.service
 systemd/user/git-maintenance@daily.timer
 systemd/user/git-maintenance@hourly.timer
 systemd/user/git-maintenance@weekly.timer
+systemd/user/pipewire-session-manager.service
+systemd/user/pipewire.service.wants
+weylus/
 tool_state
 wayvnc/
 Hardcode-Tray/
