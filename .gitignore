@@ -3,6 +3,7 @@ systemd/user/multi-user.target.wants/
 .vscode/
 abiword/
 clangd/
+scdl/
 scribus/
 warp-terminal/user_preferences.json
 assets/

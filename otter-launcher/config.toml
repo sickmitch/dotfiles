@@ -52,7 +52,7 @@ url_encode = true
 [[modules]]
 description = "search the web"
 prefix = "\u001B[32mxng\u001B[0m"
-cmd = "xdg-open https://search.sickmitch.cc/search?q='{}'; hyprctl dispatch workspace 2"
+cmd = "xdg-open https://duckduckgo.com/?q={}; hyprctl dispatch workspace 2"
 with_argument = true
 url_encode = true
 

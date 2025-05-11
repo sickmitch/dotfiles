@@ -7,11 +7,11 @@
   "margin-right": 10,
   "margin-bot": 5,
   "modules-left": [
-    "cpu",
+    "custom/polycat",
     "memory",
     "disk",
     "disk#2",
-    "custom/media"
+    "custom/media",
   ],
   "modules-center": [
     "hyprland/workspaces"
@@ -20,6 +20,7 @@
     "custom/updates",
     "tray",
     "custom/mesh",
+    "custom/screen_extend",
     "custom/radiobt",
     "bluetooth",
     "backlight",
@@ -28,19 +29,33 @@
     "battery",
     "clock"
   ],
+  "custom/polycat": {
+    "exec": "polycat",
+    "format": "{} ",
+    "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'",
+    "tooltip": "false"
+  },
   "tray": {
     "icon-size": 16,
     "spacing": 20
   },
   "custom/media": {
     "exec": "/usr/bin/python3 /home/mike/.config/waybar/scripts/mediaplayer.py --player spotify",
-    "format": "{} ",
+    "format": "{}",
     "return-type": "json",
     "on-click": "playerctl play-pause",
     "escape": true
   },
+  "custom/screen_extend": {
+    "on-click": "sh -c ~/.config/waybar/scripts/screen_extend.sh",
+    "on-click-right": "sh -c '~/.config/waybar/scripts/screen_extend.sh status'",
+    "tooltip-format": "Screen extend setup",
+    "format": "{} 󰤼",
+    "escape": true
+  },
   "custom/radiobt": {
     "on-click": "sh -c ~/.config/waybar/scripts/radiobt.sh",
+    "on-click-right": "sh -c '~/.config/waybar/scripts/radiobt.sh status'",
     "tooltip-format": "Radio on Bluetooth connection (Toggle)",
     "format": "{} ",
     "escape": true
@@ -78,7 +93,7 @@
   },
   "disk": {
     "interval": 30,
-    "format": "ROOT 󰋊 {percentage_used}%",
+    "format": "ROOT {percentage_used}% 󰋊",
     "path": "/",
     "tooltip": true,
     "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
@@ -86,7 +101,7 @@
   },
   "disk#2": {
     "interval": 30,
-    "format": "HOME 󰋊 {percentage_used}%",
+    "format": "HOME {percentage_used}% 󰋊",
     "path": "/home/mike/",
     "tooltip": true,
     "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
@@ -94,7 +109,7 @@
   },
   "memory": {
     "interval": 30,
-    "format": " {}%",
+    "format": "{}% ",
     "max-length": 10,
     "tooltip": true,
     "tooltip-format": "Memory - {used:0.1f}GB used",
@@ -109,11 +124,12 @@
   },
   "hyprland/workspaces": {
     "format": "{icon}",
-    "all-outputs": false,
+    "all-outputs": true,
     "on-click": "activate",
     "format-icons": {
       "1": "󰣇",
-      "2": ""
+      "2": "",
+      "9": "󰤼"
     },
     "sort-by-number": true
   },

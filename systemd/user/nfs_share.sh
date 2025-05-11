@@ -41,6 +41,6 @@ if [[ " ${TARGET_SSIDS[@]} " =~ " ${current_ssid} " ]] || [[ "$nordvpn_status" =
     done
 else
     echo "Not connected to any target SSID or NordVPN server dl360. No action taken."
-    DISPLAY=:0 /usr/bin/notify-send -u critical "NAS not avaible" #notify
+    DISPLAY=:0 /usr/bin/notify-send -u critical "NAS not available" #notify
 fi
 

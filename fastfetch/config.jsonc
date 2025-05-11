@@ -40,6 +40,11 @@
       "key": "\u001b[34m│  \u001b[32m󰅐 Uptime\t"
     },
     {
+      "type": "command",
+      "key": "\u001b[34m│  \u001b[32m OS Age\t",
+      "text": "birth_install=$(stat -c %W /) && current=$(date +%s) && echo \"$(( (current - birth_install) / 86400 )) days\""
+    },
+    {
       "type": "packages",
       "key": "\u001b[34m│  \u001b[32m󰏖 Packages\t",
       "format": "{all}"

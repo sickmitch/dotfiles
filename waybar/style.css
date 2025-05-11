@@ -35,18 +35,14 @@ tooltip label{
 }
 #workspaces button.focused {
     color: #a6adc8;
-    background: #eba0ac;
 }
 #workspaces button.urgent {
-    color: #33ccff;;
-    background: #1e1e2e;
+    color: #FFEE8C;
 }
 #workspaces button:hover {
-    background: #11111b;
     color: #fdfd96;
 }
 #window,
-#cpu,
 #disk,
 #memory,
 #clock,
@@ -57,9 +53,10 @@ tooltip label{
 #workspaces,
 #bluetooth,
 #backlight,
-#cpu,
 #window,
 #network,
+#custom-screen_extend,
+#custom-polycat,
 #custom-updates {
     margin-right: 16px;
 }
@@ -75,7 +72,7 @@ tooltip label{
 #window {
     margin-right: 20px;
 }
-#cpu {
+#custom-polycat {
     margin-left: 16px;
 }
 #battery.warning{
