@@ -1,6 +1,6 @@
 {
     "label" : "shutdown",
-    "action" : "systemctl poweroff"
+    "action" : "/home/mike/.config/wlogout/shutdown.sh shutdown"
 }
 
 {
@@ -10,5 +10,5 @@
 
 {
     "label" : "reboot",
-    "action" : "systemctl reboot"
+    "action" : "/home/mike/.config/wlogout/shutdown.sh reboot"
 }

@@ -58,7 +58,7 @@ window {
     background-color: @base;
     color: @primary_blue;
     border: 1px solid @primary_yellow;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 #outer-box {

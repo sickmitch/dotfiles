@@ -7,12 +7,12 @@
 }
 window#waybar {
     background: #1E1E2E;
-    opacity: 0.8;
+    opacity: 1;
     color: #cdd6f4;
-    border-width: 2px;
+    border-width: 1px;
     border-color: #33ccff; /* #595959 grigino */
     border-style: solid;
-    border-radius: 10px;
+    border-radius: 25px;
 }
 tooltip {
     background: #1e1e2e;

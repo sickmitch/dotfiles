@@ -2,10 +2,10 @@
   "layer": "top",
   "position": "top",
   "height": 31,
-  "margin-top": 5,
-  "margin-left": 10,
-  "margin-right": 10,
-  "margin-bot": 5,
+  "margin-top": 4,
+  "margin-left": 8,
+  "margin-right": 8,
+  "margin-bot": 4,
   "modules-left": [
     "custom/polycat",
     "memory",
@@ -61,9 +61,9 @@
     "escape": true
   },
   "custom/mesh": {
-    "on-click": "sh -c '~/.config/waybar/scripts/mesh.sh menu'",
-    "tooltip-format": "Manage NordVPN",
-    "format": "{} 󰖂",
+    "on-click": "sh -c '~/.config/waybar/scripts/tailscale.sh menu'",
+    "tooltip-format": "Manage Tailscale",
+    "format": "{} 󱗼",
     "escape": true
   },
   "bluetooth": {
