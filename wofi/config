@@ -1,3 +1,4 @@
 show=drun
 mode=run
 insensitive=true
+cache-file = /dev/null
