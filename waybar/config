@@ -10,7 +10,7 @@
     "custom/polycat",
     "memory",
     "disk",
-    "disk#2",
+    "disk#2"
   ],
   "modules-center": [
     "hyprland/workspaces"
@@ -138,7 +138,16 @@
     "tooltip": true,
     "locale": "it_IT.UTF-8",
     "timezone": "Europe/Rome",
-    "tooltip-format": "{:%A, %e %B %Y}"
+    "tooltip-format": "<span size='14000'>{calendar}</span>",
+    "calendar": {
+        "mode": "month",
+        "format": {
+            "months": "<span color='#ffead3'><b>{}</b></span>",
+            "days": "<span color='#ecc6d9'><b>{}</b></span>",
+            "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+            "today": "<span foreground='#ffffff'><b><u>{}</u></b></span>"
+        }
+    }
   },
   "backlight": {
     "device": "intel_backlight",
