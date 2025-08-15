@@ -24,7 +24,7 @@ if [ "$(ip a | grep -c "100.64.224.43")" -gt 0 ]; then
   sleep 3
 fi
 
-# Chiudo Chrome 
+# Chiudo Zen Browser
 if pgrep zen-browser > /dev/null; then
   echo "Closing Zen Browser gracefully…"
   pkill -TERM zen-browser

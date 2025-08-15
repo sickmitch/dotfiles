@@ -10,13 +10,13 @@
     "custom/polycat",
     "memory",
     "disk",
-    "disk#2"
+    "disk#2",
+    "custom/media"
   ],
   "modules-center": [
     "hyprland/workspaces"
   ],
   "modules-right": [
-    "custom/media",
     "custom/updates",
     "tray",
     "custom/mesh",
@@ -41,7 +41,7 @@
   },
   "custom/media": {
     "exec": "/usr/bin/python3 /home/mike/.config/waybar/scripts/mediaplayer.py --player spotify",
-    "format": "  {} ",
+    "format": "  {}",
     "return-type": "json",
     "on-click": "playerctl play-pause",
     "escape": true
