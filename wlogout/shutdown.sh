@@ -25,13 +25,13 @@ if [ "$(ip a | grep -c "100.64.224.43")" -gt 0 ]; then
 fi
 
 # Chiudo Chrome 
-if pgrep chrome > /dev/null; then
-  echo "Closing Google Chrome gracefully…"
-  pkill -TERM chrome
+if pgrep zen-browser > /dev/null; then
+  echo "Closing Zen Browser gracefully…"
+  pkill -TERM zen-browser
 
-  # Wait for Chrome to exit (max 10 seconds)
+  # Wait for Zen Browser to exit (max 10 seconds)
   timeout=10
-  while pgrep chrome >/dev/null && [ $timeout -gt 0 ]; do
+  while pgrep zen-browser >/dev/null && [ $timeout -gt 0 ]; do
     sleep 1
     ((timeout--))
   done
