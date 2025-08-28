@@ -23,7 +23,7 @@ suggestion_lines = 10
 # Modules are defined as followed
 [[modules]]
 description = "ask to ChatGPT"
-prefix = "\u001B[32mgpt\u001B[0m"
+prefix = "\u001B[32mg\u001B[0m"
 cmd = "firefox --class WebApp-ChatGPT2409 --name WebApp-ChatGPT2409 --profile /home/mike/.local/share/ice/firefox/ChatGPT2409 --no-remote 'https://chatgpt.com/?model=gpt-5&q={}'"
 with_argument = true
 url_encode = false
