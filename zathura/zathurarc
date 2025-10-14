@@ -4,3 +4,6 @@ set recolor-lightcolor \#222222
 set default-bg \#222230
 set statusbar-bg \#222230
 set recolor-keephue
+
+# map <C-n> exec "sh -c 'xournalpp \"$FILE\"'"
+map <C-n> exec "sh -c 'hyprctl dispatch fullscreen 0; xournalpp --page \"$PAGE\" \"$FILE\" & sleep 1; hyprctl dispatch focuswindow \"Xournal++\"; sleep 1; hyprctl dispatch fullscreen 1'"

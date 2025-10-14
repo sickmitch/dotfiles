@@ -25,13 +25,13 @@ if [ "$(ip a | grep -c "100.64.224.43")" -gt 0 ]; then
 fi
 
 # Chiudo Zen Browser
-if pgrep zen-browser > /dev/null; then
-  echo "Closing Zen Browser gracefully…"
-  pkill -TERM zen-browser
+if pgrep librewolf > /dev/null; then
+  echo "Closing librewolf gracefully…"
+  pkill -TERM librewolf
 
   # Wait for Zen Browser to exit (max 10 seconds)
   timeout=10
-  while pgrep zen-browser >/dev/null && [ $timeout -gt 0 ]; do
+  while pgrep librewolf >/dev/null && [ $timeout -gt 0 ]; do
     sleep 1
     ((timeout--))
   done
