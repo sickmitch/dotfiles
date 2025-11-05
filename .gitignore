@@ -29,6 +29,7 @@ systemd/user/git-maintenance@hourly.timer
 systemd/user/git-maintenance@weekly.timer
 systemd/user/pipewire-session-manager.service
 systemd/user/pipewire.service.wants
+systemd/user/*secrets.txt
 keepassxc/
 weylus/
 chromium/

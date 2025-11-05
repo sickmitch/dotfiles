@@ -1,6 +1,6 @@
 [Unit]
 Description=docs synching
-ConditionPathExists=/home/mike/NAS/documenti/
+ConditionPathExists=/home/mike/NAS/owncloud
 
 [Service]
 ExecStart=/home/mike/.config/systemd/user/doc_sync.sh

@@ -1,27 +1,12 @@
 #!/bin/bash
 
-# Define source and destination directories
-SRC=~/Documenti
-DEST=~/NAS/documenti
+source /home/mike/.config/systemd/user/oc_secrets.txt
 
-# Run rclone bisync command
-rclone bisync "$SRC" "$DEST" \
-    --check-access \
-    --check-filename .RCLONE \
-    --recover \
-    --create-empty-src-dirs \
-    --conflict-resolve newer \
-    --conflict-suffix "conflict" \
-    --max-lock 2m \
-    --no-update-modtime \
-    --no-update-dir-modtime \
-    --check-sync=false \
-    --verbose
+owncloudcmd /home/mike/Documenti $DOMAIN / -u $USER -p $PASSWD
 
-# Check if rclone bisync command was successful
 if [ $? -ne 0 ]; then
-    echo "Error: rclone bisync failed. Please check the output for details."
+    DISPLAY=:0 /usr/bin/notify-send -u critical "Failed to sync docs"
     exit 1
 else
-    echo "Sync completed successfully."
+    exit 0
 fi
