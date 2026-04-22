@@ -1,0 +1,84 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "terminal": {
+    "dock": "bottom"
+  },
+  "git_panel": {
+    "dock": "right"
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "hide_mouse": "never",
+  "cursor_shape": "bar",
+  "text_rendering_mode": "platform_default",
+  "ui_font_family": ".SystemUIFont",
+  "buffer_font_weight": 400.0,
+  "buffer_font_family": ".SystemUIFont",
+  "agent": {
+    "default_model": {
+      "provider": "openrouter",
+      "model": "openai/gpt-oss-safeguard-20b",
+      "enable_thinking": true
+    },
+    "favorite_models": [
+      {
+        "provider": "openrouter",
+        "model": "openai/gpt-oss-safeguard-20b",
+        "enable_thinking": false
+      }
+    ],
+    "model_parameters": []
+  },
+  "prettier": {
+    "allowed": false
+  },
+  "ssh_connections": [
+    {
+      "host": "DOCKER-RE",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/mike"
+          ]
+        }
+      ]
+    }
+  ],
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Material Icon Theme",
+    "dark": "Material Icon Theme"
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "vim_mode": true,
+  "base_keymap": "Cursor",
+  "ui_font_size": 17.0,
+  "buffer_font_size": 16.0,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Catppuccin Espresso (Blur) [Heavy]",
+  },
+  "language_models": {
+    "openai": {
+      "api_url": "https://openrouter.ai/api/v1",
+      "available_models": [
+        {
+          "name": "deepseek/deepseek-coder",
+          "max_tokens": 32768
+        }
+      ]
+    }
+  },
+}
