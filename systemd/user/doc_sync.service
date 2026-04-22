@@ -1,9 +1,9 @@
 [Unit]
-Description=docs synching
-ConditionPathExists=/home/mike/NAS/owncloud
+Description= ownCloud syncing
 
 [Service]
-ExecStart=/home/mike/.config/systemd/user/doc_sync.sh
+ExecStartPre=/bin/bash -c 'sleep 30; test -d /home/mike/NAS/owncloud || exit 1'
+ExecStart=/bin/bash -c '/home/mike/.config/systemd/user/doc_sync.sh'
 
 [Install]
 WantedBy=default.target

@@ -1,3 +1,16 @@
+systemd/user/nvidia_lock.sh
+systemd/user/pulseaudio.service
+systemd/user/pulseaudio.socket
+systemd/user/steam_nvidia_bind.service
+winboat/
+GeForce NOW/
+desktop/
+geforce-infinity/
+hyprwat/
+joplin-desktop-alt1/
+mozilla/
+pypr/
+rufus-linux/
 GREYC/
 discord/
 gmic/

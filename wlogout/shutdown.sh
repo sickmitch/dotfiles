@@ -12,6 +12,11 @@ elif [ "$1" = "shutdown" ]; then
   DISPLAY=:0 /usr/bin/notify-send -u critical "Shutting down the system" #notify
 fi
 
+if test -f "/var/lib/pacman/db.lck"; then
+  DISPLAY=:0 /usr/bin/notify-send -u critical "Upgrades are running, end them before retrying!"
+  exit 0
+fi
+
 # Smonto il NAS
 if findmnt -M NAS/; then
   sudo umount /home/mike/NAS
@@ -24,14 +29,12 @@ if [ "$(ip a | grep -c "100.64.224.43")" -gt 0 ]; then
   sleep 3
 fi
 
-# Chiudo Zen Browser
-if pgrep librewolf > /dev/null; then
-  echo "Closing librewolf gracefully…"
-  pkill -TERM librewolf
-
-  # Wait for Zen Browser to exit (max 10 seconds)
+# Chiudo browser
+if pgrep firefox > /dev/null; then
+  echo "Closing firefox gracefully…"
+  pkill -TERM firefox
   timeout=10
-  while pgrep librewolf >/dev/null && [ $timeout -gt 0 ]; do
+  while pgrep firefox >/dev/null && [ $timeout -gt 0 ]; do
     sleep 1
     ((timeout--))
   done
@@ -42,3 +45,5 @@ if [ "$1" = "reboot" ]; then
 elif [ "$1" = "shutdown" ]; then
   systemctl poweroff
 fi
+
+exit 0

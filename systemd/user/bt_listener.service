@@ -4,8 +4,11 @@ After=bluetooth.service
 Wants=bluetooth.service
 
 [Service]
+Type=simple
 ExecStart=/bin/bash /home/mike/.config/systemd/user/auto_bt_low-fi.sh
 Restart=always
+StandardOutput=journal
+StandardError=journal
 
 [Install]
 WantedBy=default.target
